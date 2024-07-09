@@ -6,10 +6,10 @@ import { FaPhoneAlt } from "react-icons/fa";
 const Header = () => {
   return (
     <div className="container mx-auto">
-      <div className="flex items-center justify-between bg-transparent">
+      <div className="flex items-center justify-between">
         {/* Left side: Logo */}
         <div className="flex items-center">
-          <img src={logo} alt="Logo" className="h-24 w-52" />
+          <img src={logo} alt="Logo" className="h-40 w-44" />
         </div>
 
         {/* Right side: Currency, UK flag, and phone number */}
@@ -23,7 +23,7 @@ const Header = () => {
           {/* replace with the actual path to your UK flag image */}
           <div className="flex items-center space-x-1">
             <FaPhoneAlt className="text-[#D9B84A]"/>
-            <span className="text-[#D9B84A]">+44 1234 567890</span>{" "}
+            <span className="text-[#D9B84A]">+44 203 504 0786</span>{" "}
             {/* replace with the actual phone number */}
           </div>
         </div>

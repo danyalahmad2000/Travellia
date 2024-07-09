@@ -3,8 +3,11 @@ import Partners from "../components/partners/Partners";
 import category1 from "../assets/images/guided-tours.png";
 import category2 from "../assets/images/flight-options.png";
 import category3 from "../assets/images/religious-tours.png";
-import category4 from "../assets/images/medical-insurance.png";
-import honeymoon from "../assets/images/honeymoon.png";
+import category4 from "../assets/images/luxury.png";
+import familyAdventure from "../assets/images/family1.jpg";
+import familyAdventure2 from "../assets/images/family2.jpg";
+import familyAdventure3 from "../assets/images/family3.jpg";
+import familyAdventure4 from "../assets/images/family4.jpg";
 import resort from "../assets/images/resort-booking.png";
 import chooseDestination from "../assets/images/choose-destination.png";
 import letsGo from "../assets/images/lets-go.png";
@@ -70,36 +73,39 @@ const Home = () => {
 
           <div className="flex flex-col items-center gap-5 w-[250px] text-center">
             <img
-              className="w-[87px] h-[85px]"
+              className="w-[150px] h-[85px] mb-1"
               src={category4}
               alt="Medical Insurance"
             />
-            <h1 className="text-[20px] font-bold">Medical Insurance</h1>
+            <h1 className="text-[20px] font-bold">Luxury Stays</h1>
             <p className="text-[16px] text-gray-500">
-              Ensure your peace of mind with comprehensive medical insurance
-              coverage, safeguarding your health while traveling.
+              Experience unparalleled luxury and comfort with our curated
+              selection of premium accommodations.
             </p>
           </div>
         </div>
       </div>
 
-      {/*---------------- Honeymoon ------------- */}
+      {/*---------------- Family Adventure ------------- */}
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 my-[100px]">
-        <div className="h-full">
-          <img src={honeymoon} alt="" />
+        <div className="h-full flex flex-col lg:flex-row py-10 relative gap-10 lg:gap-0">
+          <img src={familyAdventure} alt="" className="h-[300px] my-auto mx-10 shadow-xl rounded-xl" />
+          <img src={familyAdventure4} alt="" className="h-[300px] mx-10 lg:mx-0 shadow-xl rounded-xl" />
+          <img src={familyAdventure3} alt="" className="h-[300px] my-auto mx-10 shadow-xl rounded-xl" />
+          <img src={familyAdventure2} alt="" className="h-[300px] lg:absolute lg:top-96 lg:left-[280px] mx-10 lg:mx-0 shadow-xl rounded-xl" />
         </div>
         <div className="flex flex-col md:justify-center md:pl-[100px] xl:py-[172px] xl:pl-[133px] xl:w-[700px] text-center md:text-start items-center md:items-start mx-2 ">
           <h3 className="text-[20px] text-[#D9B748] font-semibold">
-            HONEYMOON SPECIALS
+            FAMILY ADVENTURES
           </h3>
           <h1 className="font-bold text-[50px] mb-[20px]">
-            Our Romantic Tropical Destinations
+            Exciting Family-Friendly Destinations
           </h1>
           <p className="text-[16px] text-gray-500">
-            Indulge in unforgettable romantic getaways at our exquisite tropical
-            destinations. Whether it's pristine beaches, secluded hideaways, or
-            luxurious resorts, create timeless memories with your loved one
-            amidst stunning natural beauty.
+            Embark on thrilling family adventures at our handpicked
+            destinations. From theme parks and wildlife safaris to interactive
+            museums and outdoor activities, create unforgettable memories with
+            your loved ones in exciting and safe environments.
           </p>
           <button className="w-[180px] h-[56px] text-center bg-[#D9B748] rounded-xl mt-[31px] text-white font-semibold">
             View Packages
@@ -114,7 +120,7 @@ const Home = () => {
             FAST & EASY
           </h3>
           <h1 className="font-bold text-[50px] mb-[20px]">
-            Get Your Favourite Resort Bookings
+            Get Your Favourite Hotels/Resort Bookings
           </h1>
           <div className="flex flex-col gap-[42px]">
             <div className="flex flex-row gap-[20px]">
@@ -186,9 +192,7 @@ const Home = () => {
               </div>
             </div>
             <div className="flex flex-row gap-[3px] justify-between">
-              <h1 className="font-bold text-[30px] mt-[10px] ">
-                Switzerland
-              </h1>
+              <h1 className="font-bold text-[30px] mt-[10px] ">Switzerland</h1>
               <div className="flex flex-row">
                 <IoStarSharp className="mt-[25px] text-[#ffd64f] size-[20px]" />
                 <IoStarSharp className="mt-[25px] text-[#ffd64f] size-[20px]" />
@@ -229,9 +233,7 @@ const Home = () => {
               </div>
             </div>
             <div className="flex flex-row gap-[3px]  justify-between">
-              <h1 className="font-bold text-[30px] mt-[10px]">
-                Amazon
-              </h1>
+              <h1 className="font-bold text-[30px] mt-[10px]">Amazon</h1>
               <div className="flex flex-row">
                 <IoStarSharp className="mt-[25px] text-[#ffd64f] size-[20px]" />
                 <IoStarSharp className="mt-[25px] text-[#ffd64f] size-[20px]" />
@@ -272,9 +274,7 @@ const Home = () => {
               </div>
             </div>
             <div className="flex flex-row gap-[3px] justify-between">
-              <h1 className="font-bold text-[30px] mt-[10px]">
-                Giza
-              </h1>
+              <h1 className="font-bold text-[30px] mt-[10px]">Giza</h1>
               <div className=" flex flex-row">
                 <IoStarSharp className="mt-[25px] text-[#ffd64f] size-[20px]" />
                 <IoStarSharp className="mt-[25px] text-[#ffd64f] size-[20px]" />
@@ -294,9 +294,9 @@ const Home = () => {
               </p>
             </div>
             <p className="mt-3">
-              Explore the wonders of Giza with our tour packages,
-              offering visits to the iconic pyramids, the Sphinx, and a deep
-              dive into Egypt's rich history and culture.
+              Explore the wonders of Giza with our tour packages, offering
+              visits to the iconic pyramids, the Sphinx, and a deep dive into
+              Egypt's rich history and culture.
             </p>
             <button className="w-[135px] h-[50px] bg-[#D9B748] rounded-xl mt-10">
               Explore Now
