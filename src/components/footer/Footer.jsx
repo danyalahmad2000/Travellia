@@ -23,8 +23,8 @@ const Footer = () => {
             alt="Logo"
             className="mb-4 w-60 h-60 mx-auto md:mx-0"
           />
-          <div className="flex flex-row gap-5 mb-4">
-            <FaMapLocation className="w-10 h-10 flex-shrink-0" />
+          <div className="flex flex-row gap-5 mb-4 items-center">
+            <FaMapLocation className="w-6 h-6 flex-shrink-0" />
             <p className="text-[16px]">
               West 44, 44-60 Richardshaw Lane, Stanningley, Pudsey, England,
               LS28 7UR
