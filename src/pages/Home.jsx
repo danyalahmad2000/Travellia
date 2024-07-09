@@ -73,7 +73,7 @@ const Home = () => {
 
           <div className="flex flex-col items-center gap-5 w-[250px] text-center">
             <img
-              className="w-[150px] h-[85px] mb-1"
+              className="w-[150px] h-[85px]"
               src={category4}
               alt="Medical Insurance"
             />
