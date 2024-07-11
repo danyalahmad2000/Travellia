@@ -5,6 +5,7 @@ import Location from "./search-components/Location";
 import Passengers from "./search-components/Passengers";
 
 const Search = () => {
+  // Define the menu items for the search categories
   const menuItems = [
     { id: 1, text: "Stays" },
     { id: 2, text: "Flights" },
@@ -13,36 +14,44 @@ const Search = () => {
     { id: 5, text: "Things to do" },
   ];
 
+  // State to manage the currently clicked menu item
   const [clickedItem, setClickedItem] = useState(1);
+  // State to manage the currently hovered menu item
   const [hoveredItem, setHoveredItem] = useState(null);
 
+  // Handle mouse enter event on a menu item
   const handleMouseEnter = (itemId) => {
     if (clickedItem !== itemId) {
       setHoveredItem(itemId);
     }
   };
 
+  // Handle mouse leave event from a menu item
   const handleMouseLeave = () => {
     setHoveredItem(null);
   };
 
+  // Handle click event on a menu item
   const handleClick = (itemId) => {
     setClickedItem(itemId === clickedItem ? null : itemId);
     setHoveredItem(null);
   };
 
+  // Set the default clicked item when the component mounts
   useEffect(() => {
     setClickedItem(1);
   }, []);
 
   return (
-    <div className="container mx-auto bg-white rounded-tl-xl rounded-3xl p-4 xl:p-8">
+    <div className="container mx-auto bg-white rounded-tl-xl rounded-3xl">
+      {/* Main container for the search component */}
       <div className="border border-solid flex flex-col bg-white rounded-3xl">
-        <div className="flex flex-wrap justify-center xl:justify-between items-center w-full xl:w-[500px] h-[40px] mx-auto">
+        {/* Menu items for selecting different search categories */}
+        <div className="flex flex-row justify-between items-center w-full max-w-[500px] mx-auto px-4 py-2">
           {menuItems.map((item) => (
             <h1
               key={item.id}
-              className={`text-[14px] xl:text-[16px] font-semibold cursor-pointer relative mx-2 xl:mx-0 ${
+              className={`text-[16px] font-semibold cursor-pointer relative ${
                 clickedItem === item.id ? "text-[#D9B748]" : "text-gray-600"
               }`}
               onClick={() => handleClick(item.id)}
@@ -50,6 +59,7 @@ const Search = () => {
               onMouseLeave={handleMouseLeave}
             >
               {item.text}
+              {/* Highlight the item when hovered or clicked */}
               {(hoveredItem === item.id || clickedItem === item.id) && (
                 <span
                   className={`absolute bottom-[-8px] left-0 h-[2px] w-full ${
@@ -60,23 +70,29 @@ const Search = () => {
             </h1>
           ))}
         </div>
-        <div className="bg-gray-300 h-[1px] w-full mt-2 xl:mt-4"></div>
+        <div className="bg-gray-300 h-[1px] w-full"></div>
 
+        {/* Render the search form when the "Stays" menu item is clicked */}
         {clickedItem === 1 && (
-          <div className="flex flex-col pb-5">
-            <div className="flex flex-wrap xl:flex-nowrap px-4 xl:px-10 h-auto xl:h-[100px] items-center justify-start xl:justify-between gap-4 xl:gap-0 mt-4 xl:mt-0">
+          <div className="flex flex-col">
+            <div className="flex flex-col xl:flex-row px-4 xl:px-10 py-4 xl:py-6 items-center justify-between">
+              {/* Location selection component */}
               <Location />
 
+              {/* Date selection component */}
               <Dates />
 
+              {/* Passengers selection component */}
               <Passengers />
 
-              <button className="w-full xl:w-[100px] h-[50px] rounded-3xl border border-solid bg-[#D9B748] text-white font-semibold">
+              {/* Search button */}
+              <button className="w-full xl:w-[100px] h-[50px] rounded-3xl border border-solid bg-[#D9B748] text-white font-semibold mt-4 xl:mt-0">
                 Search
               </button>
             </div>
 
-            <div className="flex flex-col xl:flex-row items-start xl:items-center ml-4 xl:ml-10 gap-4 xl:gap-6 mt-4 xl:mt-0">
+            {/* Additional options for adding a flight or car */}
+            <div className="flex flex-col xl:flex-row items-center justify-center xl:justify-start mt-4 ml-4 xl:ml-10 gap-4 xl:mt-0 pb-4">
               <div className="flex items-center gap-2">
                 <Checkbox
                   className="hover:border-[#D9B748] cursor-pointer"
