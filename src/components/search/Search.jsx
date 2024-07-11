@@ -104,9 +104,9 @@ const Search = () => {
         {/* Render the search form based on the clicked menu item */}
         {clickedItem === 1 && (
           <div className="flex flex-col">
-            <div className="flex flex-col xl:flex-row px-2 xl:px-10 py-4 xl:py-6 items-center justify-start gap-3">
+            <div className="flex flex-col xl:flex-row px-4 xl:px-10 py-4 xl:py-6 items-center justify-start gap-3">
               {/* Radio buttons for trip type */}
-              <div className="flex items-center gap-3">
+              <div className="flex items-center gap-3 ">
                 <label className="flex items-center">
                   <input
                     type="radio"
@@ -145,13 +145,13 @@ const Search = () => {
 
               {/* Dropdown for flight class selection */}
               <div
-                className="flex flex-row items-center justify-between w-[200px] border border-[#D9B748] px-5 rounded-xl cursor-pointer relative"
+                className="flex flex-row items-center justify-between w-[200px] h-[40px] border border-[#D9B748] px-5 rounded-xl cursor-pointer relative bg-[#e7ca68]"
                 onClick={handleBookingClassClick}
               >
                 <p>{selectedBookingClass}</p>
                 {showBookingClassDropdown ? <FaChevronUp /> : <FaChevronDown />}
                 {showBookingClassDropdown && (
-                  <div className="absolute top-full mt-1 left-0 w-full bg-white border border-[#D9B748] rounded-xl">
+                  <div className="absolute top-full mt-1 left-0 w-full bg-white border border-[#D9B748] rounded-xl ">
                     <p
                       className="cursor-pointer hover:bg-[#D9B748] p-2"
                       onClick={() => handleSelectBookingClass("Economy")}
@@ -191,7 +191,7 @@ const Search = () => {
               <Location text={"Going to?"} />
 
               {/* Date selection component */}
-              <Dates text1={"Check In"} text2={"Check Out"} />
+              <Dates text1={"Departure Date"} text2={"Returning Date"} />
 
               {/* Passengers selection component */}
               <Passengers />
