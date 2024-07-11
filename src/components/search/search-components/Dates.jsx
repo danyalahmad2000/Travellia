@@ -31,7 +31,7 @@ const Dates = () => {
             selected={checkInDate}
             onChange={handleCheckInDateChange}
             dateFormat="dd MMM, yy"
-            className="text-[18px] text-gray-700 border-none h-[25px] pl-0"
+            className="text-[16px] text-gray-700 border-none h-[25px] pl-0"
             popperClassName="date-picker-popper"
             shouldCloseOnSelect={true}
             showPopperArrow={false}
@@ -48,7 +48,7 @@ const Dates = () => {
             selected={checkOutDate}
             onChange={handleCheckOutDateChange}
             dateFormat="dd MMM, yy"
-            className="text-[18px] text-gray-700 border-none h-[25px] pl-0"
+            className="text-[16px] text-gray-700 border-none h-[25px] pl-0 cursor-pointer"
             popperClassName="date-picker-popper"
             shouldCloseOnSelect={true}
             showPopperArrow={false}

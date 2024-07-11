@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { FaUser } from "react-icons/fa";
 import { Checkbox, Label } from "flowbite-react";
 import Dates from "./search-components/Dates";
 import Location from "./search-components/Location";
+import Passengers from "./search-components/Passengers";
 
 const Search = () => {
   const menuItems = [
@@ -69,15 +69,7 @@ const Search = () => {
 
               <Dates />
 
-              <div className="flex flex-row w-[300px] border border-solid border-gray-600 rounded-xl h-[50px] items-center px-5 cursor-pointer">
-                <FaUser className="w-5 h-5 mr-5" />
-                <div className="flex flex-col">
-                  <p className="text-[12px] text-gray-500">Travellers</p>
-                  <p className="text-[18px] text-gray-700">
-                    2 travellers. 1 room
-                  </p>
-                </div>
-              </div>
+              <Passengers/>
 
               <button className="w-[100px] h-[50px] rounded-3xl border border-solid bg-[#D9B748] text-white font-semibold">
                 Search
