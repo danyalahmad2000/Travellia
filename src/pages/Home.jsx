@@ -216,7 +216,7 @@ const Home = () => {
               featuring stunning alpine landscapes, charming cities, and
               unforgettable cultural experiences.
             </p>
-            <button className="w-[135px] h-[50px] bg-[#D9B748] rounded-xl mt-10">
+            <button className="w-[135px] h-[50px] bg-[#D9B748] rounded-xl mt-10 text-white font-semibold">
               Explore Now
             </button>
           </div>
@@ -257,7 +257,7 @@ const Home = () => {
               featuring stunning alpine landscapes, charming cities, and
               unforgettable cultural experiences.
             </p>
-            <button className="w-[135px] h-[50px] bg-[#D9B748] rounded-xl mt-10">
+            <button className="w-[135px] h-[50px] bg-[#D9B748] rounded-xl mt-10 text-white font-semibold">
               Explore Now
             </button>
           </div>
@@ -298,7 +298,7 @@ const Home = () => {
               visits to the iconic pyramids, the Sphinx, and a deep dive into
               Egypt's rich history and culture.
             </p>
-            <button className="w-[135px] h-[50px] bg-[#D9B748] rounded-xl mt-10">
+            <button className="w-[135px] h-[50px] bg-[#D9B748] rounded-xl mt-10 text-white font-semibold ">
               Explore Now
             </button>
           </div>

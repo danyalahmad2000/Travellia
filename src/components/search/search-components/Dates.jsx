@@ -1,50 +1,60 @@
-import React, { useState } from 'react';
-import Calendar from 'react-calendar';
-import 'react-calendar/dist/Calendar.css';
-import "./Location.css";
+import React, { useState } from "react";
+import { format, addDays } from "date-fns";
+import { FaCalendarDay } from "react-icons/fa";
+import DatePicker from "react-datepicker"; // Import the date picker
+import "react-datepicker/dist/react-datepicker.css"; // Import date picker styles
 
 const Dates = () => {
-  const [datesRange, setDatesRange] = useState([]);
-  const [showCalendar, setShowCalendar] = useState(false);
+  const today = new Date();
+  const endDate = addDays(today, 3);
+  const formattedStartDate = format(today, "dd MMM, yy");
+  const formattedEndDate = format(endDate, "dd MMM, yy");
 
-  const handleCalendarChange = (value) => {
-    setDatesRange(value);
+  const [checkInDate, setCheckInDate] = useState(today);
+  const [checkOutDate, setCheckOutDate] = useState(endDate);
+
+  const handleCheckInDateChange = (date) => {
+    setCheckInDate(date);
   };
 
-  const toggleCalendar = () => {
-    setShowCalendar(!showCalendar);
+  const handleCheckOutDateChange = (date) => {
+    setCheckOutDate(date);
   };
 
   return (
     <>
-      <div className="relative">
-        <div
-          className="w-full md:w-[700px] lg:w-[900px] xl:w-[200px] h-[90px] flex flex-row justify-start xl:justify-center items-center relative bg-white cursor-pointer z-10 pl-4 xl:pl-0"
-          onClick={toggleCalendar}
-        >
-          <div className="flex flex-col justify-center items-start px-2 sm:px-4 py-auto">
-            <p className="font-bold">Check in - Check out</p>
-            {datesRange.length > 0 ? (
-              <p className="text-gray-500">
-                {datesRange[0].toLocaleDateString()} ~ {datesRange[datesRange.length - 1].toLocaleDateString()}
-              </p>
-            ) : (
-              <p className="text-[12px]">Select dates (Press 'Shift' while selection)</p>
-            )}
-          </div>
-          <div className="absolute h-[45px] bg-gray-300 w-[1px] right-0 top-[22.5px]"></div>
+      <div className="flex flex-row w-[300px] border border-solid border-gray-600 rounded-xl h-[50px] items-center px-5 cursor-pointer">
+        <FaCalendarDay className="w-5 h-5 mr-5" />
+        <div className="flex flex-col">
+          <p className="text-[12px] text-gray-500">Check In</p>
+          <DatePicker
+            selected={checkInDate}
+            onChange={handleCheckInDateChange}
+            dateFormat="dd MMM, yy"
+            className="text-[18px] text-gray-700 border-none h-[25px] pl-0"
+            popperClassName="date-picker-popper"
+            shouldCloseOnSelect={true}
+            showPopperArrow={false}
+            calendarClassName="date-picker-calendar"
+          />
         </div>
-        {showCalendar && (
-          <div className="absolute mt-2 left-1/2 transform -translate-x-1/2 bg-white shadow-lg rounded-lg z-20 bottom-24">
-            <Calendar
-              onChange={handleCalendarChange}
-              value={datesRange}
-              selectRange
-              minDate={new Date()}
-              className="border-gray-300 border p-2"
-            />
-          </div>
-        )}
+      </div>
+
+      <div className="flex flex-row w-[300px] border border-solid border-gray-600 rounded-xl h-[50px] items-center px-5 cursor-pointer">
+        <FaCalendarDay className="w-5 h-5 mr-5" />
+        <div className="flex flex-col justify-start">
+          <p className="text-[12px] text-gray-500">Check Out</p>
+          <DatePicker
+            selected={checkOutDate}
+            onChange={handleCheckOutDateChange}
+            dateFormat="dd MMM, yy"
+            className="text-[18px] text-gray-700 border-none h-[25px] pl-0"
+            popperClassName="date-picker-popper"
+            shouldCloseOnSelect={true}
+            showPopperArrow={false}
+            calendarClassName="date-picker-calendar"
+          />
+        </div>
       </div>
     </>
   );
