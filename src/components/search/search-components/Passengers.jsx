@@ -78,7 +78,7 @@ const Passengers = () => {
                   >
                     -
                   </button>
-                  <span>{passengerCounts.infants}</span>
+                  <span>{passengerCounts.youth}</span>
                   <button
                     className="px-3 py-1 bg-gray-200 rounded"
                     onClick={() => increaseCount("youth")}
