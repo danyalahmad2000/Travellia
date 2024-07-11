@@ -3,31 +3,55 @@ import { FaUser } from "react-icons/fa";
 
 const Passengers = () => {
   const [showPassengers, setShowPassengers] = useState(false);
-  const [passengerCounts, setPassengerCounts] = useState({
-    adults: 1,
-    youth: 0,
-    children: 0,
-    infants: 0,
-  });
+  const [rooms, setRooms] = useState([
+    {
+      adults: 1,
+      children: 0,
+      infants: 0,
+    },
+  ]);
 
   const togglePassengers = () => {
     setShowPassengers(!showPassengers);
   };
 
-  const decreaseCount = (type) => {
-    if (passengerCounts[type] > 0) {
-      setPassengerCounts((prevCounts) => ({
-        ...prevCounts,
-        [type]: prevCounts[type] - 1,
-      }));
+  const decreaseCount = (roomIndex, type) => {
+    if (rooms[roomIndex][type] > 0) {
+      const newRooms = rooms.map((room, index) => {
+        if (index === roomIndex) {
+          return {
+            ...room,
+            [type]: room[type] - 1,
+          };
+        }
+        return room;
+      });
+      setRooms(newRooms);
     }
   };
 
-  const increaseCount = (type) => {
-    setPassengerCounts((prevCounts) => ({
-      ...prevCounts,
-      [type]: prevCounts[type] + 1,
-    }));
+  const increaseCount = (roomIndex, type) => {
+    const newRooms = rooms.map((room, index) => {
+      if (index === roomIndex) {
+        return {
+          ...room,
+          [type]: room[type] + 1,
+        };
+      }
+      return room;
+    });
+    setRooms(newRooms);
+  };
+
+  const addRoom = () => {
+    setRooms([
+      ...rooms,
+      {
+        adults: 1,
+        children: 0,
+        infants: 0,
+      },
+    ]);
   };
 
   const closeDropdown = () => {
@@ -45,112 +69,107 @@ const Passengers = () => {
           <div className="flex flex-col">
             <p className="text-[12px] text-gray-500">Travellers</p>
             <p className="text-[14px] sm:text-[16px] text-gray-700">
-              {passengerCounts.adults} Adult
-              {passengerCounts.adults !== 1 && "s"}, {passengerCounts.youth}{" "}
-              Youth, {passengerCounts.children} Child
-              {passengerCounts.children !== 1 && "ren"},{" "}
-              {passengerCounts.infants} Infant
-              {passengerCounts.infants !== 1 && "s"}
+              {rooms.reduce((acc, room) => acc + room.adults, 0)} Adult
+              {rooms.reduce((acc, room) => acc + room.adults, 0) !== 1 && "s"},{" "}
+              {rooms.reduce((acc, room) => acc + room.children, 0)} Child
+              {rooms.reduce((acc, room) => acc + room.children, 0) !== 1 &&
+                "ren"},{" "}
+              {rooms.reduce((acc, room) => acc + room.infants, 0)} Infant
+              {rooms.reduce((acc, room) => acc + room.infants, 0) !== 1 && "s"}
             </p>
           </div>
         </div>
         {showPassengers && (
-          <div className="absolute mt-2 w-full xl:w-[350px] bg-white shadow-lg rounded-lg z-20 top-14">
-            <div className="p-4">
-              <div className="flex items-center justify-between mb-4">
-                <p className="font-semibold">
-                  Adults{" "}
-                  <span className="text-gray-500 font-normal">
-                    ( More than 12 yrs )
-                  </span>
-                </p>
-                <div className="flex items-center space-x-2">
-                  <button
-                    className="px-3 py-1 bg-gray-200 rounded"
-                    onClick={() => decreaseCount("adults")}
-                  >
-                    -
-                  </button>
-                  <span>{passengerCounts.adults}</span>
-                  <button
-                    className="px-3 py-1 bg-gray-200 rounded"
-                    onClick={() => increaseCount("adults")}
-                  >
-                    +
-                  </button>
+          <div className="absolute mt-2 w-full xl:w-[350px] bg-white shadow-lg rounded-lg z-999 top-14">
+            <div className="p-4 overflow-y-auto max-h-[400px]">
+              {rooms.map((room, index) => (
+                <div key={index} className="mb-4">
+                  <h3 className="text-lg font-semibold mb-4 text-[#D9B748]">
+                    Room {index + 1}
+                  </h3>
+                  <div className="flex items-center justify-between mb-4">
+                    <p className="font-semibold">
+                      Adults{" "}
+                      <span className="text-gray-500 font-normal">
+                        ( More than 17 yrs )
+                      </span>
+                    </p>
+                    <div className="flex items-center space-x-2">
+                      <button
+                        className="px-3 py-1 bg-gray-200 rounded"
+                        onClick={() => decreaseCount(index, "adults")}
+                      >
+                        -
+                      </button>
+                      <span>{room.adults}</span>
+                      <button
+                        className="px-3 py-1 bg-gray-200 rounded"
+                        onClick={() => increaseCount(index, "adults")}
+                      >
+                        +
+                      </button>
+                    </div>
+                  </div>
+                  <div className="flex items-center justify-between mb-4">
+                    <p className="font-semibold">
+                      Children{" "}
+                      <span className="text-gray-500 font-normal">
+                        ( 02 yrs - 17 yrs )
+                      </span>
+                    </p>
+                    <div className="flex items-center space-x-2">
+                      <button
+                        className="px-3 py-1 bg-gray-200 rounded"
+                        onClick={() => decreaseCount(index, "children")}
+                      >
+                        -
+                      </button>
+                      <span>{room.children}</span>
+                      <button
+                        className="px-3 py-1 bg-gray-200 rounded"
+                        onClick={() => increaseCount(index, "children")}
+                      >
+                        +
+                      </button>
+                    </div>
+                  </div>
+                  <div className="flex items-center justify-between mb-4">
+                    <p className="font-semibold">
+                      Infants{" "}
+                      <span className="text-gray-500 font-normal">
+                        ( Less than 02 yrs )
+                      </span>
+                    </p>
+                    <div className="flex items-center space-x-2">
+                      <button
+                        className="px-3 py-1 bg-gray-200 rounded"
+                        onClick={() => decreaseCount(index, "infants")}
+                      >
+                        -
+                      </button>
+                      <span>{room.infants}</span>
+                      <button
+                        className="px-3 py-1 bg-gray-200 rounded"
+                        onClick={() => increaseCount(index, "infants")}
+                      >
+                        +
+                      </button>
+                    </div>
+                  </div>
                 </div>
-              </div>
-              <div className="flex items-center justify-between mb-4">
-                <p className="font-semibold">
-                  Youth{" "}
-                  <span className="text-gray-500 font-normal">
-                    ( 11 yrs - 15 yrs )
-                  </span>
-                </p>
-                <div className="flex items-center space-x-2">
+              ))}
+              <div className="flex justify-end mb-4">
+                <div className="w-[100px]">
                   <button
-                    className="px-3 py-1 bg-gray-200 rounded"
-                    onClick={() => decreaseCount("youth")}
+                    className="w-full px-4 py-2 border-[#D9B748] border border-solid text-[#D9B748] hover:bg-[#D9B748] hover:text-white text-[12px] font-semibold rounded"
+                    onClick={addRoom}
                   >
-                    -
-                  </button>
-                  <span>{passengerCounts.youth}</span>
-                  <button
-                    className="px-3 py-1 bg-gray-200 rounded"
-                    onClick={() => increaseCount("youth")}
-                  >
-                    +
-                  </button>
-                </div>
-              </div>
-              <div className="flex items-center justify-between mb-4">
-                <p className="font-semibold">
-                  Children{" "}
-                  <span className="text-gray-500 font-normal">
-                    ( 02 yrs - 11 yrs )
-                  </span>
-                </p>
-                <div className="flex items-center space-x-2">
-                  <button
-                    className="px-3 py-1 bg-gray-200 rounded"
-                    onClick={() => decreaseCount("children")}
-                  >
-                    -
-                  </button>
-                  <span>{passengerCounts.children}</span>
-                  <button
-                    className="px-3 py-1 bg-gray-200 rounded"
-                    onClick={() => increaseCount("children")}
-                  >
-                    +
-                  </button>
-                </div>
-              </div>
-              <div className="flex items-center justify-between">
-                <p className="font-semibold">
-                  Infants{" "}
-                  <span className="text-gray-500 font-normal">
-                    ( Less than 02 yrs )
-                  </span>
-                </p>
-                <div className="flex items-center space-x-2">
-                  <button
-                    className="px-3 py-1 bg-gray-200 rounded"
-                    onClick={() => decreaseCount("infants")}
-                  >
-                    -
-                  </button>
-                  <span>{passengerCounts.infants}</span>
-                  <button
-                    className="px-3 py-1 bg-gray-200 rounded"
-                    onClick={() => increaseCount("infants")}
-                  >
-                    +
+                    Add Room
                   </button>
                 </div>
               </div>
               <button
-                className="mt-4 w-full px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 focus:outline-none"
+                className="mt-4 w-full px-4 py-2 bg-[#D9B748] font-semibold text-white rounded hover:bg-[#af943c] focus:outline-none"
                 onClick={closeDropdown}
               >
                 Done

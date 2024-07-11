@@ -7,17 +7,18 @@ import Passengers from "./search-components/Passengers";
 const Search = () => {
   // Define the menu items for the search categories
   const menuItems = [
-    { id: 1, text: "Stays" },
-    { id: 2, text: "Flights" },
-    { id: 3, text: "Cars" },
-    { id: 4, text: "Packages" },
-    { id: 5, text: "Things to do" },
+    { id: 1, text: "Flights" },
+    { id: 2, text: "Hotels" },
+    { id: 3, text: "Holiday Packages" },
+    { id: 4, text: "Hajj / Umrah Packages" },
   ];
 
   // State to manage the currently clicked menu item
   const [clickedItem, setClickedItem] = useState(1);
   // State to manage the currently hovered menu item
   const [hoveredItem, setHoveredItem] = useState(null);
+  // State to manage the "Add a Flight" checkbox
+  const [addFlight, setAddFlight] = useState(false);
 
   // Handle mouse enter event on a menu item
   const handleMouseEnter = (itemId) => {
@@ -37,13 +38,18 @@ const Search = () => {
     setHoveredItem(null);
   };
 
+  // Handle the change event for the "Add a Flight" checkbox
+  const handleAddFlightChange = () => {
+    setAddFlight(!addFlight);
+  };
+
   // Set the default clicked item when the component mounts
   useEffect(() => {
     setClickedItem(1);
   }, []);
 
   return (
-    <div className="container mx-auto bg-white rounded-tl-xl rounded-3xl">
+    <div className="container mx-auto bg-white rounded-3xl mt-[200px]">
       {/* Main container for the search component */}
       <div className="border border-solid flex flex-col bg-white rounded-3xl">
         {/* Menu items for selecting different search categories */}
@@ -73,11 +79,11 @@ const Search = () => {
         <div className="bg-gray-300 h-[1px] w-full"></div>
 
         {/* Render the search form when the "Stays" menu item is clicked */}
-        {clickedItem === 1 && (
+        {clickedItem === 2 && (
           <div className="flex flex-col">
             <div className="flex flex-col xl:flex-row px-4 xl:px-10 py-4 xl:py-6 items-center justify-between">
               {/* Location selection component */}
-              <Location />
+              <Location text={"Where to?"}/>
 
               {/* Date selection component */}
               <Dates />
@@ -86,7 +92,7 @@ const Search = () => {
               <Passengers />
 
               {/* Search button */}
-              <button className="w-full xl:w-[100px] h-[50px] rounded-3xl border border-solid bg-[#D9B748] text-white font-semibold mt-4 xl:mt-0">
+              <button className="w-full xl:w-[100px] h-[50px] rounded-3xl border border-solid bg-[#D9B748] hover:bg-[#af943c] text-white font-semibold mt-4 xl:mt-0">
                 Search
               </button>
             </div>
@@ -97,17 +103,19 @@ const Search = () => {
                 <Checkbox
                   className="hover:border-[#D9B748] cursor-pointer"
                   id="rememberFlight"
+                  checked={addFlight}
+                  onChange={handleAddFlightChange}
                 />
                 <Label htmlFor="rememberFlight">Add a Flight</Label>
               </div>
-              <div className="flex items-center gap-2">
-                <Checkbox
-                  className="hover:border-[#D9B748] cursor-pointer"
-                  id="rememberCar"
-                />
-                <Label htmlFor="rememberCar">Add a Car</Label>
-              </div>
+          
             </div>
+            {/* Additional location selection component when "Add a Flight" is checked */}
+            {addFlight && (
+              <div className="flex flex-col xl:flex-row px-4 xl:px-10 pb-4 items-center justify-between">
+                <Location text={"Leaving From?"}/>
+              </div>
+            )}
           </div>
         )}
       </div>
