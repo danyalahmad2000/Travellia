@@ -80,8 +80,8 @@ const Passengers = () => {
           </div>
         </div>
         {showPassengers && (
-          <div className="absolute mt-2 w-full xl:w-[350px] bg-white shadow-lg rounded-lg z-999 top-14">
-            <div className="p-4 overflow-y-auto max-h-[400px]">
+          <div className="absolute mt-2 w-full xl:w-[350px] bg-white shadow-lg rounded-lg z-50 top-14">
+            <div className="p-4 overflow-y-auto max-h-[320px]">
               {rooms.map((room, index) => (
                 <div key={index} className="mb-4">
                   <h3 className="text-lg font-semibold mb-4 text-[#D9B748]">
@@ -91,7 +91,7 @@ const Passengers = () => {
                     <p className="font-semibold">
                       Adults{" "}
                       <span className="text-gray-500 font-normal">
-                        ( More than 17 yrs )
+                        ( More than 11 yrs )
                       </span>
                     </p>
                     <div className="flex items-center space-x-2">
@@ -114,7 +114,7 @@ const Passengers = () => {
                     <p className="font-semibold">
                       Children{" "}
                       <span className="text-gray-500 font-normal">
-                        ( 02 yrs - 17 yrs )
+                        ( 02 yrs - 11 yrs )
                       </span>
                     </p>
                     <div className="flex items-center space-x-2">
@@ -169,7 +169,7 @@ const Passengers = () => {
                 </div>
               </div>
               <button
-                className="mt-4 w-full px-4 py-2 bg-[#D9B748] font-semibold text-white rounded hover:bg-[#af943c] focus:outline-none"
+                className="w-full px-4 py-2 bg-[#D9B748] font-semibold text-white rounded hover:bg-[#af943c] focus:outline-none"
                 onClick={closeDropdown}
               >
                 Done

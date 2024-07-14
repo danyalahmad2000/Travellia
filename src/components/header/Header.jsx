@@ -11,6 +11,7 @@ const Header = () => {
     { title: "Vacations", url: "/vacations" },
     { title: "About", url: "/about" },
     { title: "Contact Us", url: "/contact" },
+    { title: "Terms & Conditions", url: "/termsnconditions" },
   ];
 
   return (

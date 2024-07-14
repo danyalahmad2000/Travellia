@@ -1,0 +1,45 @@
+import React, { useState } from "react";
+import Dates from "./Dates";
+import Location from "./Location";
+import Passengers from "./Passengers";
+
+function Multicity() {
+  const [flights, setFlights] = useState([{ id: 1 }]);
+
+  const addFlight = () => {
+    setFlights([...flights, { id: flights.length + 1 }]);
+  };
+
+  return (
+    <>
+      <div className="flex flex-col px-4 xl:px-10 ">
+        <Passengers />
+        {flights.map(flight => (
+          <div key={flight.id} className="">
+            <h1 className="font-semibold text-[#D9B748] text-[16px] mt-5">
+              Flight {flight.id}
+            </h1>
+            <div className="flex flex-col xl:flex-row py-2 items-center justify-between gap-1">
+              <Location text={"Leaving from?"} customStyles="xl:w-[500px]" />
+              <Location text={"Going to?"} customStyles="xl:w-[500px]" />
+              <Dates text1={"Departure Date"} customStyles="xl:w-[500px]" />
+            </div>
+          </div>
+        ))}
+        <div className="flex flex-row justify-between items-center">
+          <button
+            onClick={addFlight}
+            className="w-full xl:w-[200px] h-[30px] rounded-lg border border-solid border-[#D9B748] hover:bg-[#D9B748] hover:text-white text-[#D9B748] font-semibold mt-4 xl:mt-0"
+          >
+            + Add another Flight
+          </button>
+          <button className="w-full xl:w-[100px] h-[50px] rounded-3xl border border-solid bg-[#D9B748] hover:bg-[#af943c] text-white font-semibold mt-4 xl:mt-0">
+            Search
+          </button>
+        </div>
+      </div>
+    </>
+  );
+}
+
+export default Multicity;
