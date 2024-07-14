@@ -5,7 +5,7 @@ import bg from '../../assets/images/hero-background-2.png';
 
 const Landing = () => {
   return (
-    <div className="relative xl:h-screen bg-cover bg-center bg-no-repeat overflow-x-hidden overflow-y-hidden h-[1200px] lg:h-[1300px] bg-" style={{ backgroundImage: `url(${bg})` }}>
+    <div className="relative xl:min-h-screen bg-cover bg-center bg-no-repeat overflow-x-hidden overflow-y-hidden" style={{ backgroundImage: `url(${bg})` }}>
       <div className="absolute inset-0 bg-black opacity-50"></div>
 
       {/* Content */}

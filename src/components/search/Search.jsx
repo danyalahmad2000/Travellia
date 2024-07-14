@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Checkbox, Label } from "flowbite-react";
 import Dates from "./search-components/Dates";
 import Location from "./search-components/Location";
@@ -7,6 +7,7 @@ import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 import Return from "./search-components/Return";
 import Oneway from "./search-components/Oneway";
 import Multicity from "./search-components/Multicity";
+import Packages from "./search-components/Packages";
 
 const Search = () => {
   const menuItems = [
@@ -17,25 +18,13 @@ const Search = () => {
   ];
 
   const [clickedItem, setClickedItem] = useState(1);
-  const [hoveredItem, setHoveredItem] = useState(null);
   const [addFlight, setAddFlight] = useState(false);
   const [showBookingClassDropdown, setShowBookingClassDropdown] = useState(false);
   const [selectedBookingClass, setSelectedBookingClass] = useState("Economy");
   const [selectedTripType, setSelectedTripType] = useState("return");
 
-  const handleMouseEnter = (itemId) => {
-    if (clickedItem !== itemId) {
-      setHoveredItem(itemId);
-    }
-  };
-
-  const handleMouseLeave = () => {
-    setHoveredItem(null);
-  };
-
   const handleClick = (itemId) => {
-    setClickedItem(itemId === clickedItem ? null : itemId);
-    setHoveredItem(null);
+    setClickedItem(itemId);
   };
 
   const handleAddFlightChange = () => {
@@ -55,41 +44,47 @@ const Search = () => {
     setSelectedTripType(event.target.value);
   };
 
-  useEffect(() => {
-    setClickedItem(1);
-  }, []);
-
   return (
-    <div className="container mx-auto bg-white rounded-3xl">
-      <div className="border border-solid flex flex-col bg-white rounded-3xl">
-        <div className="flex flex-row justify-between items-center w-full max-w-[500px] mx-auto px-4 py-2">
-          {menuItems.map((item) => (
+    <div className="container mx-auto md:bg-white rounded-3xl my-5">
+      <div className="border border-solid flex flex-col bg-white rounded-3xl mx-5 md:mx-0">
+        <div className="flex overflow-x-auto space-x-4 w-full max-w-[500px] mx-auto px-4 py-2">
+          {menuItems.slice(0, 2).map((item) => (
             <h1
               key={item.id}
               className={`text-[16px] font-semibold cursor-pointer relative ${
                 clickedItem === item.id ? "text-[#D9B748]" : "text-gray-600"
               }`}
               onClick={() => handleClick(item.id)}
-              onMouseEnter={() => handleMouseEnter(item.id)}
-              onMouseLeave={handleMouseLeave}
             >
               {item.text}
-              {(hoveredItem === item.id || clickedItem === item.id) && (
-                <span
-                  className={`absolute bottom-[-8px] left-0 h-[2px] w-full ${
-                    clickedItem === item.id ? "bg-[#D9B748]" : "bg-gray-600"
-                  }`}
-                ></span>
+              {clickedItem === item.id && (
+                <span className={`absolute bottom-[-8px] left-0 h-[2px] w-full bg-[#D9B748]`}></span>
               )}
             </h1>
           ))}
+          <div className="flex space-x-4">
+            {menuItems.slice(2).map((item) => (
+              <h1
+                key={item.id}
+                className={`text-[16px] font-semibold cursor-pointer relative ${
+                  clickedItem === item.id ? "text-[#D9B748]" : "text-gray-600"
+                }`}
+                onClick={() => handleClick(item.id)}
+              >
+                {item.text}
+                {clickedItem === item.id && (
+                  <span className={`absolute bottom-[-8px] left-0 h-[2px] w-full bg-[#D9B748]`}></span>
+                )}
+              </h1>
+            ))}
+          </div>
         </div>
         <div className="bg-gray-300 h-[1px] w-full"></div>
 
         {clickedItem === 1 && (
           <div className="flex flex-col">
             <div className="flex flex-col xl:flex-row px-4 xl:px-10 py-4 xl:py-6 items-center justify-start gap-3">
-              <div className="flex items-center gap-3 ">
+              <div className="flex items-center gap-3">
                 <label className="flex items-center">
                   <input
                     type="radio"
@@ -133,31 +128,16 @@ const Search = () => {
                 {showBookingClassDropdown ? <FaChevronUp /> : <FaChevronDown />}
                 {showBookingClassDropdown && (
                   <div className="absolute top-full mt-1 left-0 w-full bg-white border border-[#D9B748] rounded-xl z-40">
-                    <p
-                      className="cursor-pointer hover:bg-[#D9B748] p-2 rounded-tl-xl rounded-tr-xl"
-                      onClick={() => handleSelectBookingClass("Economy")}
-                    >
+                    <p className="cursor-pointer hover:bg-[#D9B748] p-2 rounded-tl-xl rounded-tr-xl" onClick={() => handleSelectBookingClass("Economy")}>
                       Economy
                     </p>
-                    
-                    <p
-                      className="cursor-pointer hover:bg-[#D9B748] p-2"
-                      onClick={() => handleSelectBookingClass("Premium Economy")}
-                    >
+                    <p className="cursor-pointer hover:bg-[#D9B748] p-2" onClick={() => handleSelectBookingClass("Premium Economy")}>
                       Premium Economy
                     </p>
-
-                    <p
-                      className="cursor-pointer hover:bg-[#D9B748] p-2"
-                      onClick={() => handleSelectBookingClass("Business Class")}
-                    >
+                    <p className="cursor-pointer hover:bg-[#D9B748] p-2" onClick={() => handleSelectBookingClass("Business Class")}>
                       Business Class
                     </p>
-
-                    <p
-                      className="cursor-pointer hover:bg-[#D9B748] p-2 rounded-bl-xl rounded-br-xl"
-                      onClick={() => handleSelectBookingClass("First Class")}
-                    >
+                    <p className="cursor-pointer hover:bg-[#D9B748] p-2 rounded-bl-xl rounded-br-xl" onClick={() => handleSelectBookingClass("First Class")}>
                       First Class
                     </p>
                   </div>
@@ -203,33 +183,8 @@ const Search = () => {
           </div>
         )}
 
-        {clickedItem === 3 && (
-          <div className="flex flex-col">
-            <div className="flex flex-col xl:flex-row px-4 xl:px-10 py-4 xl:py-6 items-center justify-between gap-3">
-              <Location text={"Leaving from?"} />
-              <Location text={"Going to?"} />
-              <Dates text1={"Departure Date"} text2={"Returning Date"} />
-              <Passengers />
-              <button className="w-full xl:w-[100px] h-[50px] rounded-3xl border border-solid bg-[#D9B748] hover:bg-[#af943c] text-white font-semibold mt-4 xl:mt-0">
-                Search
-              </button>
-            </div>
-          </div>
-        )}
-
-        {clickedItem === 4 && (
-          <div className="flex flex-col">
-            <div className="flex flex-col xl:flex-row px-4 xl:px-10 py-4 xl:py-6 items-center justify-between gap-3">
-              <Location text={"Leaving from?"} />
-              <Location text={"Going to?"} />
-              <Dates text1={"Departure Date"} text2={"Returning Date"} />
-              <Passengers />
-              <button className="w-full xl:w-[100px] h-[50px] rounded-3xl border border-solid bg-[#D9B748] hover:bg-[#af943c] text-white font-semibold mt-4 xl:mt-0">
-                Search
-              </button>
-            </div>
-          </div>
-        )}
+        {clickedItem === 3 && <Packages />}
+        {clickedItem === 4 && <Packages />}
       </div>
     </div>
   );

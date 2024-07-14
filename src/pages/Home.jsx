@@ -24,7 +24,7 @@ import { IoLocationOutline } from "react-icons/io5";
 const Home = () => {
   return (
     <>
-      
+      <Partners />
       {/*----------------- CATEGORY------------- */}
       <div className="container mx-auto flex flex-wrap flex-col items-center my-[100px]">
         <h1 className="text-[20px] text-[#D9B748] font-semibold">CATEGORY</h1>

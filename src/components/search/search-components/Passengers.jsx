@@ -60,28 +60,32 @@ const Passengers = () => {
 
   return (
     <>
-      <div className="relative xl:mt-0 mt-4 w-full xl:w-[350px]">
+      <div className="relative xl:mt-0 mt-4">
         <div
-          className="flex flex-row w-full xl:w-[300px] border border-solid border-gray-600 rounded-xl h-[50px] items-center px-5 cursor-pointer mb-4 xl:mb-0"
+          className="flex flex-row w-full xl:w-[380px] border border-solid border-gray-600 rounded-xl h-[50px] items-center px-5 cursor-pointer mb-4 xl:mb-0"
           onClick={togglePassengers}
         >
           <FaUser className="w-5 h-5 mr-5" />
           <div className="flex flex-col">
-            <p className="text-[12px] text-gray-500">Travellers</p>
-            <p className="text-[14px] sm:text-[16px] text-gray-700">
+            <p className="text-[14px] text-gray-500">Travellers</p>
+            <p className="text-[12px] sm:text-[16px] text-gray-700">
               {rooms.reduce((acc, room) => acc + room.adults, 0)} Adult
-              {rooms.reduce((acc, room) => acc + room.adults, 0) !== 1 && "s"},{" "}
-              {rooms.reduce((acc, room) => acc + room.children, 0)} Child
+              {rooms.reduce((acc, room) => acc + room.adults, 0) !== 1 &&
+                "s"}, {rooms.reduce((acc, room) => acc + room.children, 0)}{" "}
+              Child
               {rooms.reduce((acc, room) => acc + room.children, 0) !== 1 &&
-                "ren"},{" "}
-              {rooms.reduce((acc, room) => acc + room.infants, 0)} Infant
-              {rooms.reduce((acc, room) => acc + room.infants, 0) !== 1 && "s"}
+                "ren"}
+              , {rooms.reduce((acc, room) => acc + room.infants, 0)} Infant
+              {rooms.reduce((acc, room) => acc + room.infants, 0) !== 1 &&
+                "s"}{" "}
+              | {rooms.length} Room
+              {rooms.length !== 1 && "s"}
             </p>
           </div>
         </div>
         {showPassengers && (
           <div className="absolute mt-2 w-full xl:w-[350px] bg-white shadow-lg rounded-lg z-50 top-14">
-            <div className="p-4 overflow-y-auto max-h-[320px]">
+            <div className="p-4 overflow-y-auto max-h-[400px]">
               {rooms.map((room, index) => (
                 <div key={index} className="mb-4">
                   <h3 className="text-lg font-semibold mb-4 text-[#D9B748]">

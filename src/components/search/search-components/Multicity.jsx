@@ -4,10 +4,12 @@ import Location from "./Location";
 import Passengers from "./Passengers";
 
 function Multicity() {
-  const [flights, setFlights] = useState([{ id: 1 }]);
+  const [flights, setFlights] = useState([{ id: 1 }, { id: 2 }]); // Start with 2 flights
 
   const addFlight = () => {
-    setFlights([...flights, { id: flights.length + 1 }]);
+    if (flights.length < 5) {
+      setFlights([...flights, { id: flights.length + 1 }]);
+    }
   };
 
   return (
@@ -26,10 +28,15 @@ function Multicity() {
             </div>
           </div>
         ))}
-        <div className="flex flex-row justify-between items-center mb-2">
+        <div className="flex flex-col lg:flex-row justify-between items-center mb-2">
           <button
             onClick={addFlight}
-            className="w-full xl:w-[200px] h-[30px] rounded-lg border border-solid border-[#D9B748] hover:bg-[#D9B748] hover:text-white text-[#D9B748] font-semibold mt-4 xl:mt-0"
+            className={`w-full xl:w-[200px] h-[30px] rounded-lg border border-solid ${
+              flights.length >= 5
+                ? ' cursor-not-allowed text-[#D9B748]' // Dim color and blocked cursor
+                : 'border-[#D9B748] hover:bg-[#D9B748] hover:text-white text-[#D9B748]'
+            } font-semibold mt-4 xl:mt-0`}
+            disabled={flights.length >= 5} // Disable button when 5 flights are added
           >
             + Add another Flight
           </button>
