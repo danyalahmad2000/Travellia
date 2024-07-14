@@ -26,7 +26,7 @@ function Multicity() {
             </div>
           </div>
         ))}
-        <div className="flex flex-row justify-between items-center">
+        <div className="flex flex-row justify-between items-center mb-2">
           <button
             onClick={addFlight}
             className="w-full xl:w-[200px] h-[30px] rounded-lg border border-solid border-[#D9B748] hover:bg-[#D9B748] hover:text-white text-[#D9B748] font-semibold mt-4 xl:mt-0"
