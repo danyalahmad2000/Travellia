@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useRef} from "react";
 import Partners from "../components/partners/Partners";
 import category1 from "../assets/images/guided-tours.png";
 import category2 from "../assets/images/flight-options.png";
@@ -22,6 +22,12 @@ import { IoStarSharp } from "react-icons/io5";
 import { IoLocationOutline } from "react-icons/io5";
 
 const Home = () => {
+  const trendyRef = useRef(null);
+
+  const scrollToTrendy = () => {
+    trendyRef.current.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <>
       <Partners />
@@ -89,10 +95,26 @@ const Home = () => {
       {/*---------------- Family Adventure ------------- */}
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 my-[100px]">
         <div className="h-full flex flex-col lg:flex-row py-10 relative gap-10 lg:gap-0">
-          <img src={familyAdventure} alt="" className="h-[300px] my-auto mx-10 shadow-xl rounded-xl" />
-          <img src={familyAdventure4} alt="" className="h-[300px] mx-10 lg:mx-0 shadow-xl rounded-xl" />
-          <img src={familyAdventure3} alt="" className="h-[300px] my-auto mx-10 shadow-xl rounded-xl" />
-          <img src={familyAdventure2} alt="" className="h-[300px] lg:absolute lg:top-96 lg:left-[280px] mx-10 lg:mx-0 shadow-xl rounded-xl" />
+          <img
+            src={familyAdventure}
+            alt=""
+            className="h-[300px] my-auto mx-10 shadow-xl rounded-xl"
+          />
+          <img
+            src={familyAdventure4}
+            alt=""
+            className="h-[300px] mx-10 lg:mx-0 shadow-xl rounded-xl"
+          />
+          <img
+            src={familyAdventure3}
+            alt=""
+            className="h-[300px] my-auto mx-10 shadow-xl rounded-xl"
+          />
+          <img
+            src={familyAdventure2}
+            alt=""
+            className="h-[300px] lg:absolute lg:top-96 lg:left-[280px] mx-10 lg:mx-0 shadow-xl rounded-xl"
+          />
         </div>
         <div className="flex flex-col md:justify-center md:pl-[100px] xl:py-[172px] xl:pl-[133px] xl:w-[700px] text-center md:text-start items-center md:items-start mx-2 ">
           <h3 className="text-[20px] text-[#D9B748] font-semibold">
@@ -107,7 +129,10 @@ const Home = () => {
             museums and outdoor activities, create unforgettable memories with
             your loved ones in exciting and safe environments.
           </p>
-          <button className="w-[180px] h-[56px] text-center bg-[#D9B748] rounded-xl mt-[31px] text-white font-semibold">
+          <button
+            className="w-[180px] h-[56px] text-center bg-[#D9B748] rounded-xl mt-[31px] text-white font-semibold"
+            onClick={scrollToTrendy}
+          >
             View Packages
           </button>
         </div>
@@ -174,7 +199,10 @@ const Home = () => {
       </div>
 
       {/*------------- Trendy ----------- */}
-      <div className="container mx-auto flex flex-col items-center my-[100px]">
+      <div
+        ref={trendyRef}
+        className="container mx-auto flex flex-col items-center my-[100px]"
+      >
         <h3 className="text-[20px] text-[#D9B748] font-semibold">TRENDY</h3>
         <h1 className="font-bold text-[50px] mb-[51px] text-center">
           Our Trending Tour Packages
