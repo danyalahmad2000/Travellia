@@ -1,4 +1,4 @@
-import React,{useRef} from "react";
+import React, { useRef } from "react";
 import Partners from "../components/partners/Partners";
 import category1 from "../assets/images/guided-tours.png";
 import category2 from "../assets/images/flight-options.png";
@@ -20,6 +20,8 @@ import { IoBriefcase } from "react-icons/io5";
 import { FaUser } from "react-icons/fa";
 import { IoStarSharp } from "react-icons/io5";
 import { IoLocationOutline } from "react-icons/io5";
+import dealImg from "../assets/images/deals1.jpg";
+import ImgCarousel from "../components/carousel/ImgCarousel";
 
 const Home = () => {
   const trendyRef = useRef(null);
@@ -138,6 +140,25 @@ const Home = () => {
         </div>
       </div>
 
+      {/*---------------- Deals ------------- */}
+      <div className="relative container mx-auto">
+        <img
+          src={dealImg}
+          alt="Summer Deals"
+          className="rounded-3xl h-[700px] w-full object-cover"
+        />
+        <div className="absolute xl:left-10 top-52 bg-white p-5 m-4 rounded-3xl xl:w-[400px]">
+          <h1 className="text-4xl font-semibold mb-2">Big Summer deals are on now</h1>
+          <p className="text-md w-[300px]">Make your big summer getaway happen: members save 25% or more on thousands of hotels worldwide.</p>
+          <button
+            className="w-[180px] h-[56px] text-center bg-[#D9B748] rounded-xl mt-[31px] text-white font-semibold"
+            onClick={scrollToTrendy}
+          >
+            Book by 21 July
+          </button>
+        </div>
+      </div>
+
       {/*------------- RESORT BOOKINGS ----------- */}
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 my-[50px]">
         <div className="flex flex-col md:justify-center md:pl-[50px] xl:py-[50px] xl:pl-[133px] xl:w-[700px] text-center md:text-start items-center md:items-start mx-2 ">
@@ -197,6 +218,9 @@ const Home = () => {
       <div>
         <img className="w-full h-[400px]" src={statueOfLiberty} alt="" />
       </div>
+
+      {/*------------- Img Carousel ----------- */}
+      <ImgCarousel/>
 
       {/*------------- Trendy ----------- */}
       <div
