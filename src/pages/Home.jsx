@@ -177,7 +177,7 @@ const Home = () => {
           <h1 className="font-bold text-[50px] mb-[20px]">
             Get Your Favourite Hotels/Resort Bookings
           </h1>
-          <div className="flex flex-col gap-[42px]">
+          <div className="flex flex-col gap-[42px] text-start">
             <div className="flex flex-row gap-[20px]">
               <img
                 className="w-[47px] h-[48px] my-auto"
