@@ -46,7 +46,7 @@ const Search = () => {
 
   return (
     <div className="container mx-auto md:bg-transparent rounded-3xl my-5">
-      <div className="border border-solid flex flex-col bg-white rounded-3xl mx-10">
+      <div className="border border-solid flex flex-col bg-white rounded-3xl mx-5">
         <div className="flex overflow-x-auto space-x-4 w-full max-w-[500px] mx-auto px-4 py-2">
           {menuItems.slice(0, 2).map((item) => (
             <h1
