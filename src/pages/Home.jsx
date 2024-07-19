@@ -363,6 +363,7 @@ const Home = () => {
               Explore Now
             </button>
           </div>
+          
         </div>
       </div>
     </>
