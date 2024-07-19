@@ -29,7 +29,7 @@ const Header = () => {
         </div>
 
         {/* Center: Tabs/Navigation Links */}
-        <nav className={`md:flex md:space-x-10 space-x-2 ${isNavOpen ? 'flex flex-col absolute right-0 top-16 bg-white shadow-lg w-full z-10' : 'hidden md:flex md:relative md:top-0 md:w-auto md:shadow-none'}`}>
+        <nav className={`md:flex md:space-x-6 space-x-2 ${isNavOpen ? 'flex flex-col absolute right-0 top-16 bg-white shadow-lg w-full z-10' : 'hidden md:flex md:relative md:top-0 md:w-auto md:shadow-none'}`}>
           {navLinks.map((link, index) => (
             <a
               key={index}

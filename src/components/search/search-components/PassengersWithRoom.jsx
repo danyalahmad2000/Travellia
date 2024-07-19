@@ -85,7 +85,7 @@ const PassengersWithRoom = () => {
         </div>
         {showPassengers && (
           <div className="xl:absolute mt-2 w-full xl:w-[350px] bg-white shadow-lg rounded-lg z-50 top-14">
-            <div className="p-4 overflow-y-auto max-h-[400px]">
+            <div className="p-4 overflow-y-auto max-h-[300px]">
               {rooms.map((room, index) => (
                 <div key={index} className="mb-4">
                   <h3 className="text-lg font-semibold mb-4 text-[#D9B748]">
