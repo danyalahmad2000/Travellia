@@ -15,6 +15,11 @@ import img13 from "../../assets/images/maldives.jpg";
 import img14 from "../../assets/images/new york.jpg";
 import img15 from "../../assets/images/makkah.jpg";
 import img16 from "../../assets/images/madina.jpg";
+import img17 from "../../assets/images/LosAngeles.jpg";
+import img18 from "../../assets/images/AbuDhabi.jpg";
+import img19 from "../../assets/images/Lahore.jpg";
+import img20 from "../../assets/images/Colombo.jpg";
+import img21 from "../../assets/images/Islamabad.jpg";
 import { Carousel } from "flowbite-react";
 
 const destinations = [
@@ -34,6 +39,11 @@ const destinations = [
   { img: img14, name: "New York" },
   { img: img15, name: "Makkah" },
   { img: img16, name: "Madina" },
+  { img: img17, name: "Los Angeles" },
+  { img: img18, name: "Abu Dhabi" }, 
+  { img: img19, name: "Lahore" },  
+  { img: img20, name: "Colombo" },
+  { img: img21, name: "Islamabad" }
 ];
 
 function ImgCarousel() {
@@ -49,7 +59,7 @@ function ImgCarousel() {
             <img
               src={destination.img}
               alt={destination.name}
-              className="w-full h-full object-center object-cover"
+              className="w-full h-full object-center object-contain"
             />
             <div className="absolute bottom-8 sm:bottom-10 md:bottom-12 lg:bottom-14 left-1/2 transform -translate-x-1/2 bg-black bg-opacity-50 text-[#D9B748] text-center py-2 px-4 rounded">
               <h2 className="text-sm sm:text-md md:text-xl lg:text-2xl font-semibold">{destination.name}</h2>
