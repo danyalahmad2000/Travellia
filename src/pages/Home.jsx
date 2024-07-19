@@ -150,7 +150,7 @@ const Home = () => {
             alt="Summer Deals"
             className="rounded-3xl h-[700px] w-full object-cover"
           />
-          <div className="absolute xl:left-10 top-52 bg-white p-5 m-4 rounded-3xl xl:w-[400px]">
+          <div className="absolute left-0 xl:left-10 top-52 bg-white p-5 m-4 rounded-3xl xl:w-[400px]">
             <h1 className="text-4xl font-semibold mb-2">
               Big Summer deals are on now
             </h1>

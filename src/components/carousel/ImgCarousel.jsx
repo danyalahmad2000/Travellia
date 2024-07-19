@@ -48,7 +48,7 @@ const destinations = [
 
 function ImgCarousel() {
   return (
-    <div className="container mx-auto my-20 flex flex-col justify-center items-center px-4">
+    <div className="container mx-auto my-20 flex flex-col justify-center items-center px-4 overflow-x-hidden">
       <h3 className="text-[20px] text-[#D9B748] font-semibold mb-2">POPULAR</h3>
       <h1 className="font-bold text-[50px] mb-6 text-center">
         Our Popular Destinations

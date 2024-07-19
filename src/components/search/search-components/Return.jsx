@@ -20,7 +20,7 @@ function Return() {
         <PassengersWithoutRoom />
 
         {/* Search button */}
-        <button className="w-full xl:w-[100px] h-[50px] rounded-3xl border border-solid bg-[#D9B748] hover:bg-[#af943c] text-white font-semibold mt-4 xl:mt-0">
+        <button className="w-full xl:max-w-[100px] h-[50px] rounded-3xl border border-solid bg-[#D9B748] hover:bg-[#af943c] text-white font-semibold mt-4 xl:mt-0">
           Search
         </button>
       </div>
