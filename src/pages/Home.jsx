@@ -34,8 +34,8 @@ const Home = () => {
     <>
       <Partners />
       {/*----------------- CATEGORY------------- */}
-      <div className="container mx-auto flex flex-wrap flex-col items-center my-[100px]">
-        <div className="mx-5">
+      <div className="container mx-auto my-[100px]">
+        <div className="mx-5 flex flex-wrap flex-col items-center">
           <h1 className="text-[20px] text-[#D9B748] font-semibold text-center ">CATEGORY</h1>
           <h1 className="font-bold text-[50px] mb-[100px] text-center">
             We Offer Best Services
@@ -144,7 +144,7 @@ const Home = () => {
 
       {/*---------------- Deals ------------- */}
       <div className="relative container mx-auto px-4">
-        <div className="mx-5">
+        <div className="md:mx-5">
           <img
             src={dealImg}
             alt="Summer Deals"

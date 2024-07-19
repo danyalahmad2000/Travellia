@@ -66,11 +66,13 @@ function Packages() {
         </div>
         <div className="flex flex-col xl:flex-row px-4 xl:px-10 py-4 xl:py-6 items-center justify-between gap-2">
           <Location text={"Where to?"} />
+          <Location text={"Going to?"} />
+
           <Dates text1={"Departure Date"} />
           <Dates text1={"Returning Date"} />
           <PassengersWithRoom />
 
-          <button className="w-full xl:w-[100px] h-[50px] rounded-3xl border border-solid bg-[#D9B748] hover:bg-[#af943c] text-white font-semibold mt-4 xl:mt-0">
+          <button className="w-full xl:max-w-[70px] h-[50px] rounded-3xl border border-solid bg-[#D9B748] hover:bg-[#af943c] text-white font-semibold mt-4 xl:mt-0">
             Search
           </button>
         </div>

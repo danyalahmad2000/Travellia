@@ -31,23 +31,30 @@ const Partners = () => {
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 2000,
+    arrows:false,
     responsive: [
       {
         breakpoint: 1280,
         settings: {
-          slidesToShow: 3,
+          slidesToShow: 4,
         }
       },
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 3,
         }
       },
       {
         breakpoint: 768,
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 2,
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 2,
         }
       }
     ]
@@ -55,11 +62,11 @@ const Partners = () => {
 
   return (
     <div className='w-full bg-zinc-100 py-10'>
-      <div className='mx-auto'>
+      <div className='mx-auto px-4'>
         <Slider {...settings}>
           {logos.map((logo, index) => (
-            <div key={index} className='flex justify-center items-center'>
-              <img className='h-[150px] object-contain' src={logo.src} alt={logo.alt} />
+            <div key={index} className='flex justify-center items-center p-4'>
+              <img className='h-[100px] sm:h-[120px] md:h-[150px] object-contain' src={logo.src} alt={logo.alt} />
             </div>
           ))}
         </Slider>
