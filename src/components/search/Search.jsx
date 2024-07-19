@@ -154,7 +154,7 @@ const Search = () => {
 
         {clickedItem === 2 && (
           <div className="flex flex-col">
-            <div className="flex flex-col xl:flex-row px-4 xl:px-10 py-4 xl:py-6 items-center justify-between">
+            <div className="flex flex-col xl:flex-row px-4 xl:px-10 py-4 xl:py-6 items-center justify-between gap-2">
               <Location text={"Where to?"} />
               <Dates text1={"Check In"} />
               <Dates text1={"Check Out"} />
