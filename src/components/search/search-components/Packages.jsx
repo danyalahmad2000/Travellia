@@ -30,7 +30,7 @@ function Packages() {
   return (
     <>
       <div className="flex flex-col">
-        <div className="flex space-x-4 mt-4 px-4 xl:px-10">
+        <div className="flex flex-col md:flex-row gap-2 md:space-x-4 mt-4 px-4 xl:px-10">
           <button
             className={`w-full xl:w-[120px] h-[30px] rounded-lg border border-solid text-[14px] ${stayText.includes("Added") ? 'bg-[#D9B748] text-white' : 'border-[#D9B748] text-[#D9B748]'} hover:bg-[#D9B748] hover:text-white font-semibold`}
             onClick={handleStayClick}
