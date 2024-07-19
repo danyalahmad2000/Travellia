@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { FaUser } from "react-icons/fa";
 
-const Passengers = () => {
+const PassengersWithoutRoom  = () => {
   const [showPassengers, setShowPassengers] = useState(false);
   const [rooms, setRooms] = useState([
     {
@@ -43,26 +43,12 @@ const Passengers = () => {
     setRooms(newRooms);
   };
 
-  const addRoom = () => {
-    setRooms([
-      ...rooms,
-      {
-        adults: 1,
-        children: 0,
-        infants: 0,
-      },
-    ]);
-  };
-
-  const closeDropdown = () => {
-    setShowPassengers(false);
-  };
 
   return (
     <>
-      <div className="relative xl:mt-0 mt-4">
+      <div className="xl:relative xl:mt-0">
         <div
-          className="flex flex-row w-full xl:w-[380px] border border-solid border-gray-600 rounded-xl h-[50px] items-center px-5 cursor-pointer mb-4 xl:mb-0"
+          className="flex flex-row w-full xl:w-[300px] border border-solid border-gray-600 rounded-xl h-[50px] items-center px-5 cursor-pointer mb-4 xl:mb-0 " 
           onClick={togglePassengers}
         >
           <FaUser className="w-5 h-5 mr-5" />
@@ -78,19 +64,14 @@ const Passengers = () => {
               , {rooms.reduce((acc, room) => acc + room.infants, 0)} Infant
               {rooms.reduce((acc, room) => acc + room.infants, 0) !== 1 &&
                 "s"}{" "}
-              | {rooms.length} Room
-              {rooms.length !== 1 && "s"}
             </p>
           </div>
         </div>
         {showPassengers && (
-          <div className="absolute mt-2 w-full xl:w-[350px] bg-white shadow-lg rounded-lg z-50 top-14">
+          <div className="xl:absolute mt-2 w-full xl:w-[350px] bg-white shadow-lg rounded-lg z-50 top-14">
             <div className="p-4 overflow-y-auto max-h-[400px]">
               {rooms.map((room, index) => (
                 <div key={index} className="mb-4">
-                  <h3 className="text-lg font-semibold mb-4 text-[#D9B748]">
-                    Room {index + 1}
-                  </h3>
                   <div className="flex items-center justify-between mb-4">
                     <p className="font-semibold">
                       Adults{" "}
@@ -162,22 +143,6 @@ const Passengers = () => {
                   </div>
                 </div>
               ))}
-              <div className="flex justify-end mb-4">
-                <div className="w-[100px]">
-                  <button
-                    className="w-full px-4 py-2 border-[#D9B748] border border-solid text-[#D9B748] hover:bg-[#D9B748] hover:text-white text-[12px] font-semibold rounded"
-                    onClick={addRoom}
-                  >
-                    Add Room
-                  </button>
-                </div>
-              </div>
-              <button
-                className="w-full px-4 py-2 bg-[#D9B748] font-semibold text-white rounded hover:bg-[#af943c] focus:outline-none"
-                onClick={closeDropdown}
-              >
-                Done
-              </button>
             </div>
           </div>
         )}
@@ -186,4 +151,4 @@ const Passengers = () => {
   );
 };
 
-export default Passengers;
+export default PassengersWithoutRoom;

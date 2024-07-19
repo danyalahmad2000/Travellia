@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Dates from "./Dates";
 import Location from "./Location";
-import Passengers from "./Passengers";
+import PassengersWithoutRoom from "./PassengersWithoutRoom";
 
 function Multicity() {
   const [flights, setFlights] = useState([{ id: 1 }, { id: 2 }]); // Start with 2 flights
@@ -15,7 +15,7 @@ function Multicity() {
   return (
     <>
       <div className="flex flex-col px-4 xl:px-10 ">
-        <Passengers />
+        <PassengersWithoutRoom />
         {flights.map(flight => (
           <div key={flight.id} className="">
             <h1 className="font-semibold text-[#D9B748] text-[16px] mt-5">

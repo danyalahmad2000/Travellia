@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Dates from "./Dates";
 import Location from "./Location";
-import Passengers from "./Passengers";
+import PassengersWithRoom from "./PassengersWithRoom";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa"; // Import icons
 
 function Packages() {
@@ -66,9 +66,9 @@ function Packages() {
         </div>
         <div className="flex flex-col xl:flex-row px-4 xl:px-10 py-4 xl:py-6 items-center justify-between">
           <Location text={"Where to?"} />
-          <Dates text1={"Check In"} />
-          <Dates text1={"Check Out"} />
-          <Passengers />
+          <Dates text1={"Departure Date"} />
+          <Dates text1={"Returning Date"} />
+          <PassengersWithRoom />
 
           <button className="w-full xl:w-[100px] h-[50px] rounded-3xl border border-solid bg-[#D9B748] hover:bg-[#af943c] text-white font-semibold mt-4 xl:mt-0">
             Search

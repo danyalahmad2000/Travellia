@@ -1,7 +1,7 @@
 import React from "react";
 import Dates from "./Dates";
 import Location from "./Location";
-import Passengers from "./Passengers";
+import PassengersWithoutRoom from "./PassengersWithoutRoom";
 import { Checkbox, Label } from "flowbite-react";
 
 function Return() {
@@ -17,7 +17,7 @@ function Return() {
         <Dates text1={"Returning Date"}/>
 
         {/* Passengers selection component */}
-        <Passengers />
+        <PassengersWithoutRoom />
 
         {/* Search button */}
         <button className="w-full xl:w-[100px] h-[50px] rounded-3xl border border-solid bg-[#D9B748] hover:bg-[#af943c] text-white font-semibold mt-4 xl:mt-0">

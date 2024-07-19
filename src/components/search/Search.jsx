@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Checkbox, Label } from "flowbite-react";
 import Dates from "./search-components/Dates";
 import Location from "./search-components/Location";
-import Passengers from "./search-components/Passengers";
+import PassengersWithRoom from "./search-components/PassengersWithRoom";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 import Return from "./search-components/Return";
 import Oneway from "./search-components/Oneway";
@@ -45,8 +45,8 @@ const Search = () => {
   };
 
   return (
-    <div className="container mx-auto md:bg-white rounded-3xl my-5">
-      <div className="border border-solid flex flex-col bg-white rounded-3xl mx-5 md:mx-0">
+    <div className="container mx-auto md:bg-transparent rounded-3xl my-5">
+      <div className="border border-solid flex flex-col bg-white rounded-3xl mx-10">
         <div className="flex overflow-x-auto space-x-4 w-full max-w-[500px] mx-auto px-4 py-2">
           {menuItems.slice(0, 2).map((item) => (
             <h1
@@ -158,7 +158,7 @@ const Search = () => {
               <Location text={"Where to?"} />
               <Dates text1={"Check In"} />
               <Dates text1={"Check Out"} />
-              <Passengers />
+              <PassengersWithRoom />
               <button className="w-full xl:w-[100px] h-[50px] rounded-3xl border border-solid bg-[#D9B748] hover:bg-[#af943c] text-white font-semibold mt-4 xl:mt-0">
                 Search
               </button>

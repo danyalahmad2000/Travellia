@@ -16,11 +16,11 @@ const Header = () => {
   ];
 
   return (
-    <div className="container mx-auto relative">
-      <div className="flex items-center justify-between py-4">
+    <div className="container mx-auto px-4 md:px-8 lg:px-12">
+      <div className="flex items-center justify-between py-4 mx-4">
         {/* Left side: Logo */}
         <div className="flex items-center">
-          <img src={logo} alt="Logo" className="h-40 w-44" />
+          <img src={logo} alt="Logo" className="h-32 md:h-48 w-auto" />
         </div>
 
         {/* Right side: Hamburger Icon for smaller screens */}
@@ -29,7 +29,7 @@ const Header = () => {
         </div>
 
         {/* Center: Tabs/Navigation Links */}
-        <nav className={`md:flex md:space-x-16 ${isNavOpen ? 'flex flex-col absolute right-0 top-40 bg-white shadow-lg w-full z-10' : 'hidden md:flex'}`}>
+        <nav className={`md:flex md:space-x-10 space-x-2 ${isNavOpen ? 'flex flex-col absolute right-0 top-16 bg-white shadow-lg w-full z-10' : 'hidden md:flex md:relative md:top-0 md:w-auto md:shadow-none'}`}>
           {navLinks.map((link, index) => (
             <a
               key={index}
@@ -41,8 +41,8 @@ const Header = () => {
             </a>
           ))}
 
-          {/* Right side: Currency, UK flag, and phone number in dropdown */}
-          <div className="flex items-center space-x-6 p-4">
+          {/* Right side: Currency, UK flag, and phone number */}
+          <div className="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-6 p-4">
             <span className="font-bold text-[16px] text-[#D9B84A]">GBP</span>
             <img
               src={ukFlag}

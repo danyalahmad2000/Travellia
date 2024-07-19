@@ -35,87 +35,89 @@ const Home = () => {
       <Partners />
       {/*----------------- CATEGORY------------- */}
       <div className="container mx-auto flex flex-wrap flex-col items-center my-[100px]">
-        <h1 className="text-[20px] text-[#D9B748] font-semibold">CATEGORY</h1>
-        <h1 className="font-bold text-[50px] mb-[100px] text-center md:text-start">
-          We Offer Best Services
-        </h1>
-        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 justify-between gap-32">
-          <div className="flex flex-col items-center gap-5 w-[250px] text-center">
-            <img
-              className="w-[87px] h-[85px]"
-              src={category1}
-              alt="Guided Tours"
-            />
-            <h1 className="text-[20px] font-bold">Guided Tours</h1>
-            <p className="text-[16px] text-gray-500">
-              Discover new destinations with our knowledgeable guides, ensuring
-              an enriching travel experience.
-            </p>
-          </div>
+        <div className="mx-5">
+          <h1 className="text-[20px] text-[#D9B748] font-semibold text-center ">CATEGORY</h1>
+          <h1 className="font-bold text-[50px] mb-[100px] text-center">
+            We Offer Best Services
+          </h1>
+          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 justify-between gap-32">
+            <div className="flex flex-col items-center gap-5 w-[250px] text-center">
+              <img
+                className="w-[87px] h-[85px]"
+                src={category1}
+                alt="Guided Tours"
+              />
+              <h1 className="text-[20px] font-bold">Incredible Destinations</h1>
+              <p className="text-[16px] text-gray-500">
+                Explore top destinations with our knowledgeable guides, ensuring
+                an enriching travel experience.
+              </p>
+            </div>
 
-          <div className="flex flex-col items-center gap-5 w-[250px] text-center">
-            <img
-              className="w-[87px] h-[85px]"
-              src={category2}
-              alt="Best Flight Options"
-            />
-            <h1 className="text-[20px] font-bold">Best Flight Options</h1>
-            <p className="text-[16px] text-gray-500">
-              Choose from a variety of flight options tailored to your
-              preferences and budget, ensuring a seamless journey.
-            </p>
-          </div>
+            <div className="flex flex-col items-center gap-5 w-[250px] text-center">
+              <img
+                className="w-[87px] h-[85px]"
+                src={category2}
+                alt="Best Flight Options"
+              />
+              <h1 className="text-[20px] font-bold">Best Flight Options</h1>
+              <p className="text-[16px] text-gray-500">
+                Choose from a variety of flight options tailored to your
+                preferences and budget, ensuring a seamless journey.
+              </p>
+            </div>
 
-          <div className="flex flex-col items-center gap-5 w-[250px] text-center">
-            <img
-              className="w-[87px] h-[85px]"
-              src={category3}
-              alt="Religious Tours"
-            />
-            <h1 className="text-[20px] font-bold">Religious Tours</h1>
-            <p className="text-[16px] text-gray-500">
-              Embark on spiritual journeys to sacred places, fostering deeper
-              connections and cultural understanding.
-            </p>
-          </div>
+            <div className="flex flex-col items-center gap-5 w-[250px] text-center">
+              <img
+                className="w-[87px] h-[85px]"
+                src={category3}
+                alt="Religious Tours"
+              />
+              <h1 className="text-[20px] font-bold">Religious Tours</h1>
+              <p className="text-[16px] text-gray-500">
+                Embark on spiritual journeys to sacred places, fostering deeper
+                connections and cultural understanding.
+              </p>
+            </div>
 
-          <div className="flex flex-col items-center gap-5 w-[250px] text-center">
-            <img
-              className="w-[150px] h-[85px]"
-              src={category4}
-              alt="Medical Insurance"
-            />
-            <h1 className="text-[20px] font-bold">Luxury Stays</h1>
-            <p className="text-[16px] text-gray-500">
-              Experience unparalleled luxury and comfort with our curated
-              selection of premium accommodations.
-            </p>
+            <div className="flex flex-col items-center gap-5 w-[250px] text-center">
+              <img
+                className="w-[150px] h-[85px]"
+                src={category4}
+                alt="Medical Insurance"
+              />
+              <h1 className="text-[20px] font-bold">Luxury Stays</h1>
+              <p className="text-[16px] text-gray-500">
+                Experience unparalleled luxury and comfort with our curated
+                selection of premium accommodations.
+              </p>
+            </div>
           </div>
         </div>
       </div>
 
       {/*---------------- Family Adventure ------------- */}
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 my-[100px]">
-        <div className="h-full flex flex-col lg:flex-row py-10 relative gap-10 lg:gap-0">
+        <div className="h-full flex flex-col xl:flex-row py-10 xl:relative gap-10 lg:gap-0 ">
           <img
             src={familyAdventure}
             alt=""
-            className="h-[300px] my-auto mx-10 shadow-xl rounded-xl"
+            className="h-[300px] my-auto mx-10 shadow-xl rounded-xl object-cover object-center"
           />
           <img
             src={familyAdventure4}
             alt=""
-            className="h-[300px] mx-10 lg:mx-0 shadow-xl rounded-xl"
+            className="h-[300px] mx-10 lg:mx-0 shadow-xl rounded-xl object-cover object-bottom"
           />
           <img
             src={familyAdventure3}
             alt=""
-            className="h-[300px] my-auto mx-10 shadow-xl rounded-xl"
+            className="h-[300px] my-auto mx-10 shadow-xl rounded-xl object-cover object-bottom "
           />
           <img
             src={familyAdventure2}
             alt=""
-            className="h-[300px] lg:absolute lg:top-96 lg:left-[280px] mx-10 lg:mx-0 shadow-xl rounded-xl"
+            className="h-[300px] xl:absolute xl:top-96 xl:left-[280px] mx-10 xl:mx-0 shadow-xl rounded-xl object-cover object-center"
           />
         </div>
         <div className="flex flex-col md:justify-center md:pl-[100px] xl:py-[172px] xl:pl-[133px] xl:w-[700px] text-center md:text-start items-center md:items-start mx-2 ">
@@ -141,21 +143,28 @@ const Home = () => {
       </div>
 
       {/*---------------- Deals ------------- */}
-      <div className="relative container mx-auto">
-        <img
-          src={dealImg}
-          alt="Summer Deals"
-          className="rounded-3xl h-[700px] w-full object-cover"
-        />
-        <div className="absolute xl:left-10 top-52 bg-white p-5 m-4 rounded-3xl xl:w-[400px]">
-          <h1 className="text-4xl font-semibold mb-2">Big Summer deals are on now</h1>
-          <p className="text-md w-[300px]">Make your big summer getaway happen: members save 25% or more on thousands of hotels worldwide.</p>
-          <button
-            className="w-[180px] h-[56px] text-center bg-[#D9B748] rounded-xl mt-[31px] text-white font-semibold"
-            onClick={scrollToTrendy}
-          >
-            Book by 21 July
-          </button>
+      <div className="relative container mx-auto px-4">
+        <div className="mx-5">
+          <img
+            src={dealImg}
+            alt="Summer Deals"
+            className="rounded-3xl h-[700px] w-full object-cover"
+          />
+          <div className="absolute xl:left-10 top-52 bg-white p-5 m-4 rounded-3xl xl:w-[400px]">
+            <h1 className="text-4xl font-semibold mb-2">
+              Big Summer deals are on now
+            </h1>
+            <p className="text-md w-[300px]">
+              Make your big summer getaway happen: members save 25% or more on
+              thousands of hotels worldwide.
+            </p>
+            <button
+              className="w-[180px] h-[56px] text-center bg-[#D9B748] rounded-xl mt-[31px] text-white font-semibold"
+              onClick={scrollToTrendy}
+            >
+              Book by 21 July
+            </button>
+          </div>
         </div>
       </div>
 
@@ -220,7 +229,7 @@ const Home = () => {
       </div>
 
       {/*------------- Img Carousel ----------- */}
-      <ImgCarousel/>
+      <ImgCarousel />
 
       {/*------------- Trendy ----------- */}
       <div
