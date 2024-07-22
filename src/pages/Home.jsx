@@ -22,6 +22,7 @@ import { IoStarSharp } from "react-icons/io5";
 import { IoLocationOutline } from "react-icons/io5";
 import dealImg from "../assets/images/deals1.jpg";
 import ImgCarousel from "../components/carousel/ImgCarousel";
+import ContactUs from "../components/contactus/ContactUs";
 
 const Home = () => {
   const trendyRef = useRef(null);
@@ -366,6 +367,9 @@ const Home = () => {
           
         </div>
       </div>
+
+      {/*------------- Contact Us ----------- */}
+      <ContactUs/>
     </>
   );
 };
