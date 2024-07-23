@@ -17,7 +17,7 @@ const Header = () => {
   ];
 
   return (
-    <div className="container mx-auto px-4 md:px-8 lg:px-12">
+    <div className="container mx-auto px-4 md:px-8 lg:px-12 mb-20">
       <div className="flex items-center justify-between py-4 mx-4">
         {/* Left side: Logo */}
         <Link to="/" className="flex items-center justify-center">

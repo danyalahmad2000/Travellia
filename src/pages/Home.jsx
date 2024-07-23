@@ -27,9 +27,14 @@ import ContactUs from "../components/contactus/ContactUs";
 
 const Home = () => {
   const trendyRef = useRef(null);
+  const contactRef = useRef(null);
 
   const scrollToTrendy = () => {
     trendyRef.current.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const scrollToContact = () => {
+    contactRef.current.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
@@ -117,7 +122,7 @@ const Home = () => {
           </p>
           <button
             className="w-[180px] h-[56px] text-center bg-[#D9B748] rounded-xl mt-[31px] text-white font-semibold"
-            onClick={scrollToTrendy}
+            onClick={scrollToContact}
           >
             Request a Callback
           </button>
@@ -414,7 +419,9 @@ const Home = () => {
       </div>
 
       {/*------------- Contact Us ----------- */}
-      <ContactUs />
+      <div ref={contactRef}>
+        <ContactUs />
+      </div>
     </>
   );
 };
