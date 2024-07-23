@@ -121,7 +121,6 @@ const Home = () => {
           >
             Request a Callback
           </button>
-          
         </div>
         <div className="h-full mt-5">
           <img src={bookflights} alt="" />
@@ -200,6 +199,9 @@ const Home = () => {
         </div>
       </div>
 
+      {/*------------- Img Carousel ----------- */}
+      <ImgCarousel />
+
       {/*------------- RESORT BOOKINGS ----------- */}
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 my-[50px]">
         <div className="flex flex-col md:justify-center md:pl-[50px] xl:py-[50px] xl:pl-[133px] xl:w-[700px] text-center md:text-start items-center md:items-start mx-2 ">
@@ -251,17 +253,13 @@ const Home = () => {
           </div>
         </div>
         <div className="h-full mt-5 flex justify-center items-center mx-5 ">
-          <img src={resort} alt="" className="w-full rounded-xl md:w-[600px] md:h-[400px] object-cover object-center"/>
+          <img
+            src={resort}
+            alt=""
+            className="w-full rounded-xl md:w-[600px] md:h-[400px] object-cover object-center"
+          />
         </div>
       </div>
-
-      {/*------------- Statue of Liberty ----------- */}
-      <div>
-        <img className="w-full h-[400px]" src={statueOfLiberty} alt="" />
-      </div>
-
-      {/*------------- Img Carousel ----------- */}
-      <ImgCarousel />
 
       {/*------------- Trendy ----------- */}
       <div
@@ -408,6 +406,11 @@ const Home = () => {
             </button>
           </div>
         </div>
+      </div>
+
+      {/*------------- Statue of Liberty ----------- */}
+      <div>
+        <img className="w-full h-[400px]" src={statueOfLiberty} alt="" />
       </div>
 
       {/*------------- Contact Us ----------- */}
