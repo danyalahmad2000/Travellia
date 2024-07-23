@@ -41,11 +41,11 @@ function Multicity() {
           <button
             onClick={addFlight}
             className={`w-full xl:w-[200px] h-[30px] rounded-lg border border-solid ${
-              flights.length >= 5
+              flights.length >= 4
                 ? " cursor-not-allowed text-[#D9B748]" // Dim color and blocked cursor
                 : "border-[#D9B748] hover:bg-[#D9B748] hover:text-white text-[#D9B748]"
             } font-semibold mt-4 xl:mt-0`}
-            disabled={flights.length >= 5} // Disable button when 5 flights are added
+            disabled={flights.length >= 4} // Disable button when 4 flights are added
           >
             + Add another Flight
           </button>
