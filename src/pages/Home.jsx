@@ -8,14 +8,15 @@ import familyAdventure from "../assets/images/family1.jpg";
 import familyAdventure2 from "../assets/images/family2.jpg";
 import familyAdventure3 from "../assets/images/family3.jpg";
 import familyAdventure4 from "../assets/images/family4.jpg";
-import resort from "../assets/images/resort-booking.png";
+import bookflights from "../assets/images/book-flights.png";
+import resort from "../assets/images/resort.jpg";
 import chooseDestination from "../assets/images/choose-destination.png";
 import letsGo from "../assets/images/lets-go.png";
 import checkAvailability from "../assets/images/check-availability.png";
 import statueOfLiberty from "../assets/images/statue-of-liberty.png";
-import switzerlandImg from "../assets/images/switzerland.png";
-import giza from "../assets/images/giza.png";
-import amazon from "../assets/images/amazon.png";
+import losangeles from "../assets/images/LosAngeles.jpg";
+import maldives from "../assets/images/maldives.jpg";
+import lasvegas from "../assets/images/las vegas.jpg";
 import { IoBriefcase } from "react-icons/io5";
 import { FaUser } from "react-icons/fa";
 import { IoStarSharp } from "react-icons/io5";
@@ -37,7 +38,9 @@ const Home = () => {
       {/*----------------- CATEGORY------------- */}
       <div className="container mx-auto my-[100px]">
         <div className="mx-5 flex flex-wrap flex-col items-center">
-          <h1 className="text-[20px] text-[#D9B748] font-semibold text-center ">CATEGORY</h1>
+          <h1 className="text-[20px] text-[#D9B748] font-semibold text-center ">
+            CATEGORY
+          </h1>
           <h1 className="font-bold text-[50px] mb-[100px] text-center">
             We Offer Best Services
           </h1>
@@ -94,6 +97,34 @@ const Home = () => {
               </p>
             </div>
           </div>
+        </div>
+      </div>
+
+      {/*----------------- Flights------------- */}
+      <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 my-[50px]">
+        <div className="flex flex-col md:justify-center md:pl-[50px] xl:py-[50px] xl:pl-[133px] xl:w-[700px] text-center md:text-start items-center md:items-start mx-2 ">
+          <h3 className="text-[20px] text-[#D9B748] font-semibold">
+            QUICK & CONVENIENT
+          </h3>
+          <h1 className="font-bold text-[50px] mb-[20px]">
+            Book Your Flights Effortlessly
+          </h1>
+          <p className="text-[16px] text-gray-500">
+            Embark on thrilling family adventures at our handpicked
+            destinations. From theme parks and wildlife safaris to interactive
+            museums and outdoor activities, create unforgettable memories with
+            your loved ones in exciting and safe environments.
+          </p>
+          <button
+            className="w-[180px] h-[56px] text-center bg-[#D9B748] rounded-xl mt-[31px] text-white font-semibold"
+            onClick={scrollToTrendy}
+          >
+            Request a Callback
+          </button>
+          
+        </div>
+        <div className="h-full mt-5">
+          <img src={bookflights} alt="" />
         </div>
       </div>
 
@@ -219,8 +250,8 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <div className="h-full mt-5">
-          <img src={resort} alt="" />
+        <div className="h-full mt-5 flex justify-center items-center mx-5 ">
+          <img src={resort} alt="" className="w-full rounded-xl md:w-[600px] md:h-[400px] object-cover object-center"/>
         </div>
       </div>
 
@@ -243,7 +274,11 @@ const Home = () => {
         </h1>
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-[100px]">
           <div className="flex flex-col w-[280px] xl:w-[400px]">
-            <img src={switzerlandImg} alt="" />
+            <img
+              src={losangeles}
+              alt=""
+              className="rounded-xl w-[400px] h-[300px] object-cover object-center"
+            />
             <div className="flex flex-row gap-[35px]">
               <div className="flex flex-row items-center gap-[10px] mt-[20px] text-gray-500">
                 <IoBriefcase />8 Days
@@ -254,7 +289,7 @@ const Home = () => {
               </div>
             </div>
             <div className="flex flex-row gap-[3px] justify-between">
-              <h1 className="font-bold text-[30px] mt-[10px] ">Switzerland</h1>
+              <h1 className="font-bold text-[30px] mt-[10px] ">Los Angeles</h1>
               <div className="flex flex-row">
                 <IoStarSharp className="mt-[25px] text-[#ffd64f] size-[20px]" />
                 <IoStarSharp className="mt-[25px] text-[#ffd64f] size-[20px]" />
@@ -265,7 +300,7 @@ const Home = () => {
             </div>
             <div className="flex flex-row gap-3 items-center mt-3 text-gray-500">
               <IoLocationOutline className="size-[28px] " />
-              <p className="font-semibold">Europe</p>
+              <p className="font-semibold">United States</p>
             </div>
             <div className="flex flex-row gap-[21px] mt-[10px]">
               <p className="font-semibold text-[30px] text-[#D9B748]">1,000$</p>
@@ -274,9 +309,9 @@ const Home = () => {
               </p>
             </div>
             <p className="mt-3">
-              Experience the best of Switzerland with our curated tour packages,
-              featuring stunning alpine landscapes, charming cities, and
-              unforgettable cultural experiences.
+              Experience the vibrant city of Los Angeles, known for its
+              entertainment industry, beautiful beaches, and diverse cultural
+              attractions.
             </p>
             <button className="w-[135px] h-[50px] bg-[#D9B748] rounded-xl mt-10 text-white font-semibold">
               Explore Now
@@ -284,7 +319,11 @@ const Home = () => {
           </div>
 
           <div className="flex flex-col w-[280px] xl:w-[400px]">
-            <img src={amazon} alt="" />
+            <img
+              src={maldives}
+              alt=""
+              className="rounded-xl w-[400px] h-[300px] object-cover object-center"
+            />
             <div className="flex flex-row gap-[35px]">
               <div className="flex flex-row items-center gap-[10px] mt-[20px] text-gray-500">
                 <IoBriefcase />8 Days
@@ -295,7 +334,7 @@ const Home = () => {
               </div>
             </div>
             <div className="flex flex-row gap-[3px]  justify-between">
-              <h1 className="font-bold text-[30px] mt-[10px]">Amazon</h1>
+              <h1 className="font-bold text-[30px] mt-[10px]">Maldives</h1>
               <div className="flex flex-row">
                 <IoStarSharp className="mt-[25px] text-[#ffd64f] size-[20px]" />
                 <IoStarSharp className="mt-[25px] text-[#ffd64f] size-[20px]" />
@@ -306,7 +345,7 @@ const Home = () => {
             </div>
             <div className="flex flex-row gap-3 items-center mt-3 text-gray-500">
               <IoLocationOutline className="size-[28px] " />
-              <p className="font-semibold">Brazil</p>
+              <p className="font-semibold">Maldives</p>
             </div>
             <div className="flex flex-row gap-[21px] mt-[10px]">
               <p className="font-semibold text-[30px] text-[#D9B748]">1,000$</p>
@@ -315,9 +354,9 @@ const Home = () => {
               </p>
             </div>
             <p className="mt-3">
-              Experience the best of Switzerland with our curated tour packages,
-              featuring stunning alpine landscapes, charming cities, and
-              unforgettable cultural experiences.
+              Explore the breathtaking beauty of the Maldives, with its pristine
+              beaches, crystal-clear waters, and luxurious resorts offering the
+              perfect tropical getaway.
             </p>
             <button className="w-[135px] h-[50px] bg-[#D9B748] rounded-xl mt-10 text-white font-semibold">
               Explore Now
@@ -325,7 +364,11 @@ const Home = () => {
           </div>
 
           <div className="flex flex-col w-[280px] xl:w-[400px]">
-            <img src={giza} alt="" />
+            <img
+              src={lasvegas}
+              alt=""
+              className="rounded-xl w-[400px] h-[300px] object-cover object-center"
+            />
             <div className="flex flex-row gap-[35px]">
               <div className="flex flex-row items-center gap-[10px] mt-[20px] text-gray-500">
                 <IoBriefcase />8 Days
@@ -336,7 +379,7 @@ const Home = () => {
               </div>
             </div>
             <div className="flex flex-row gap-[3px] justify-between">
-              <h1 className="font-bold text-[30px] mt-[10px]">Giza</h1>
+              <h1 className="font-bold text-[30px] mt-[10px]">Las Vegas</h1>
               <div className=" flex flex-row">
                 <IoStarSharp className="mt-[25px] text-[#ffd64f] size-[20px]" />
                 <IoStarSharp className="mt-[25px] text-[#ffd64f] size-[20px]" />
@@ -347,7 +390,7 @@ const Home = () => {
             </div>
             <div className="flex flex-row gap-3 items-center mt-3 text-gray-500">
               <IoLocationOutline className="size-[28px] " />
-              <p className="font-semibold">Egypt</p>
+              <p className="font-semibold">United States</p>
             </div>
             <div className="flex flex-row gap-[21px] mt-[10px]">
               <p className="font-semibold text-[30px] text-[#D9B748]">1,000$</p>
@@ -356,20 +399,19 @@ const Home = () => {
               </p>
             </div>
             <p className="mt-3">
-              Explore the wonders of Giza with our tour packages, offering
-              visits to the iconic pyramids, the Sphinx, and a deep dive into
-              Egypt's rich history and culture.
+              Experience the excitement of Las Vegas, famous for its vibrant
+              nightlife, world-class entertainment, and iconic casinos set
+              against the backdrop of the Nevada desert.
             </p>
             <button className="w-[135px] h-[50px] bg-[#D9B748] rounded-xl mt-10 text-white font-semibold ">
               Explore Now
             </button>
           </div>
-          
         </div>
       </div>
 
       {/*------------- Contact Us ----------- */}
-      <ContactUs/>
+      <ContactUs />
     </>
   );
 };

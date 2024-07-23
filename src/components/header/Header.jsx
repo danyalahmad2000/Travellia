@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import logo from "../../assets/images/logo.png"; // Replace with the actual path to your logo
+import logo from "../../assets/images/logo2.png"; // Replace with the actual path to your logo
 import ukFlag from "../../assets/images/uk-flag.png";
 import { FaPhoneAlt, FaBars, FaTimes } from "react-icons/fa";
 
@@ -20,7 +20,7 @@ const Header = () => {
       <div className="flex items-center justify-between py-4 mx-4">
         {/* Left side: Logo */}
         <div className="flex items-center">
-          <img src={logo} alt="Logo" className="h-32 md:h-48 w-auto" />
+          <img src={logo} alt="Logo" className="h-16 md:h-16 w-auto" />
         </div>
 
         {/* Right side: Hamburger Icon for smaller screens */}
@@ -29,7 +29,7 @@ const Header = () => {
         </div>
 
         {/* Center: Tabs/Navigation Links */}
-        <nav className={`md:flex md:space-x-6 space-x-2 ${isNavOpen ? 'flex flex-col absolute right-0 top-16 bg-white shadow-lg w-full z-10' : 'hidden md:flex md:relative md:top-0 md:w-auto md:shadow-none'}`}>
+        <nav className={`md:flex md:space-x-6 space-x-2 ${isNavOpen ? 'flex flex-col absolute left-0 top-16 bg-white shadow-lg w-full z-10 rounded-xl' : 'hidden md:flex md:relative md:top-0 md:w-auto md:shadow-none'}`}>
           {navLinks.map((link, index) => (
             <a
               key={index}
@@ -40,21 +40,21 @@ const Header = () => {
               {link.title}
             </a>
           ))}
-
-          {/* Right side: Currency, UK flag, and phone number */}
-          <div className="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-6 p-4">
-            <span className="font-bold text-[16px] text-[#D9B84A]">GBP</span>
-            <img
-              src={ukFlag}
-              alt="UK Flag"
-              className="h-5 w-auto font-bold"
-            />
-            <div className="flex items-center space-x-1">
-              <FaPhoneAlt className="text-[#D9B84A]" />
-              <span className="text-[#D9B84A]">+44 203 504 0786</span>
-            </div>
-          </div>
         </nav>
+
+        {/* Right side: Currency, UK flag, and phone number */}
+        <div className={`md:flex md:items-center md:space-x-6 space-y-2 md:space-y-0 ${isNavOpen ? 'hidden' : 'flex items-center space-x-1'}`}>
+          <span className="font-bold text-[16px] text-[#D9B84A]">GBP</span>
+          <img
+            src={ukFlag}
+            alt="UK Flag"
+            className="h-5 w-auto font-bold"
+          />
+          <div className="flex items-center space-x-1">
+            <FaPhoneAlt className="text-[#D9B84A]" />
+            <span className="text-[#D9B84A]">+44 203 504 0786</span>
+          </div>
+        </div>
       </div>
     </div>
   );

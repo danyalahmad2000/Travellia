@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from '../header/Header'; // Replace with the actual path to your Header component
 import Hero from '../hero/Hero'; // Replace with the actual path to your Hero component
-import bg from '../../assets/images/hero-background-2.png';
+import bg from '../../assets/images/hero-background-3.jpg';
 
 const Landing = () => {
   return (

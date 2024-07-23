@@ -1,5 +1,5 @@
 import React from "react";
-import contact from "../../assets/images/contact.jpg"
+import contact from "../../assets/images/contact.jpg";
 
 function ContactUs() {
   return (
@@ -61,12 +61,13 @@ function ContactUs() {
 
               <div className="flex flex-col md:flex-row gap-12 justify-center lg:justify-normal">
                 <div className="flex flex-col gap-2">
-                  <label htmlFor="" className="text-start">
+                  <label htmlFor="message" className="text-start">
                     Your Message
                   </label>
                   <textarea
+                    id="message"
                     type="text"
-                    className="w-full md:w-[650px] h-[200px] rounded-xl bg-[#F9FAFB] border-[#E5E7EB]"
+                    className="w-full md:w-[650px] h-[200px] rounded-xl bg-[#F9FAFB] border-[#E5E7EB] resize-none"
                   />
                 </div>
               </div>
@@ -80,7 +81,11 @@ function ContactUs() {
                 </button>
               </div>
             </div>
-            <img src={contact} alt="" className="w-full h-auto lg:size-[400px] xl:size-[600px] object-cover object-center order-1 lg:order-2 shadow-xl shadow-[#d9b748a9] rounded-3xl"/>
+            <img
+              src={contact}
+              alt=""
+              className="w-full h-auto lg:size-[400px] xl:size-[600px] object-cover object-center order-1 lg:order-2 shadow-xl shadow-[#d9b748a9] rounded-3xl"
+            />
           </div>
         </div>
       </div>

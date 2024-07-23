@@ -16,15 +16,24 @@ function Multicity() {
     <>
       <div className="flex flex-col px-4 xl:px-10 ">
         <PassengersWithoutRoom />
-        {flights.map(flight => (
+        {flights.map((flight) => (
           <div key={flight.id} className="">
             <h1 className="font-semibold text-[#D9B748] text-[16px] mt-5">
               Flight {flight.id}
             </h1>
-            <div className="flex flex-col xl:flex-row py-2 items-center justify-between gap-1">
-              <Location text={"Leaving from?"} customStyles="xl:w-[500px]" />
-              <Location text={"Going to?"} customStyles="xl:w-[500px]" />
-              <Dates text1={"Departure Date"} customStyles="xl:w-[500px]" />
+            <div className="flex flex-col xl:flex-row py-2 items-center justify-between gap-5">
+              <Location
+                text={"Leaving from?"}
+                customStyles="xl:flex-1 xl:min-w-[430px]"
+              />
+              <Location
+                text={"Going to?"}
+                customStyles="xl:flex-1 xl:min-w-[430px]"
+              />
+              <Dates
+                text1={"Departure Date"}
+                customStyles="xl:flex-1 xl:min-w-[430px]"
+              />
             </div>
           </div>
         ))}
@@ -33,8 +42,8 @@ function Multicity() {
             onClick={addFlight}
             className={`w-full xl:w-[200px] h-[30px] rounded-lg border border-solid ${
               flights.length >= 5
-                ? ' cursor-not-allowed text-[#D9B748]' // Dim color and blocked cursor
-                : 'border-[#D9B748] hover:bg-[#D9B748] hover:text-white text-[#D9B748]'
+                ? " cursor-not-allowed text-[#D9B748]" // Dim color and blocked cursor
+                : "border-[#D9B748] hover:bg-[#D9B748] hover:text-white text-[#D9B748]"
             } font-semibold mt-4 xl:mt-0`}
             disabled={flights.length >= 5} // Disable button when 5 flights are added
           >
