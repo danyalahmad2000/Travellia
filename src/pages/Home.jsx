@@ -316,7 +316,10 @@ const Home = () => {
               entertainment industry, beautiful beaches, and diverse cultural
               attractions.
             </p>
-            <button className="w-[135px] h-[50px] bg-[#D9B748] rounded-xl mt-10 text-white font-semibold">
+            <button
+              className="w-[135px] h-[50px] bg-[#D9B748] rounded-xl mt-10 text-white font-semibold "
+              onClick={scrollToContact}
+            >
               Explore Now
             </button>
           </div>
@@ -361,7 +364,10 @@ const Home = () => {
               beaches, crystal-clear waters, and luxurious resorts offering the
               perfect tropical getaway.
             </p>
-            <button className="w-[135px] h-[50px] bg-[#D9B748] rounded-xl mt-10 text-white font-semibold">
+            <button
+              className="w-[135px] h-[50px] bg-[#D9B748] rounded-xl mt-10 text-white font-semibold "
+              onClick={scrollToContact}
+            >
               Explore Now
             </button>
           </div>
@@ -406,7 +412,10 @@ const Home = () => {
               nightlife, world-class entertainment, and iconic casinos set
               against the backdrop of the Nevada desert.
             </p>
-            <button className="w-[135px] h-[50px] bg-[#D9B748] rounded-xl mt-10 text-white font-semibold ">
+            <button
+              className="w-[135px] h-[50px] bg-[#D9B748] rounded-xl mt-10 text-white font-semibold "
+              onClick={scrollToContact}
+            >
               Explore Now
             </button>
           </div>
